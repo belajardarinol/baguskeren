@@ -1,0 +1,321 @@
+/* --------------------------------------------------------------------
+* Documentation Stylesheet
+* 
+* Author:		Themetorium
+* URL:			http://themetorium.net
+*
+* Template main color: #b12c0d;
+-------------------------------------------------------------------- */
+
+
+/* ------------------------------------------------------------- *
+ *  General
+/* ------------------------------------------------------------- */
+
+html, body {
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+body {
+	position: relative;
+	background-color: #FFF;
+	font-family: Arial, Verdana, sans-serif;
+	line-height: 1.5;
+	font-size: 15px;
+	color: #333;
+}
+
+a {
+	color: #cc0c11;
+	text-decoration: none;
+}
+a:hover, a:focus {
+	color: #ef1318;
+}
+a:focus {
+	outline: none;
+}
+
+p {
+	margin: 0 0 1.3em;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+b, strong {
+	font-weight: bold;
+	font-weight: 600;
+}
+
+section {
+	position: relative;
+}
+
+hr {
+	border-top: 1px solid #DDDDDD;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+pre {
+	overflow: auto;
+	max-height: 400px;
+	font-size: 12px;
+}
+
+code { 
+	font-family: monospace;
+	color: #c64a48;
+	background-color: #eee;
+}
+
+/* selection */
+::selection {
+	color: #fff;
+	text-shadow: none;
+	background: #b12c0d;
+}
+::-moz-selection {
+	color: #fff;
+	text-shadow: none;
+	background: #b12c0d; /* Firefox */
+}
+::-webkit-selection {
+	color: #fff;
+	text-shadow: none;
+	background: #b12c0d; /* Safari */
+}
+
+/* add more space */
+.more-space {
+	height: 40px;
+}
+
+
+/* ------------------------------------------------------------- *
+ * Headings
+/* ------------------------------------------------------------- */
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+	color: inherit;
+	font-weight: bold;
+}
+.h1, .h2, .h3, h1, h2, h3 {
+	line-height: 1.2;
+	margin-top: 0px;
+	margin-bottom: 20px;
+}
+.h4, .h5, .h6, h4, h5, h6 {
+	line-height: 1.4;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+.h1, h1 { font-size: 42px; }
+.h2, h2 { font-size: 32px; }
+.h3, h3 { font-size: 24px; }
+.h4, h4 { font-size: 18px; }
+.h5, h5 { font-size: 16px; }
+.h6, h6 { font-size: 14px; }
+
+
+.section-heading {
+	display: block;
+	margin-bottom: 30px;
+	padding-bottom: 20px;
+	color: #b12c0d;
+	border-bottom: 1px solid #ededed;
+}
+
+
+/* ------------------------------------------------------------- *
+ *  Body content
+/* ------------------------------------------------------------- */
+
+#body-content {
+	position: relative;
+	max-width: 1000px;
+	margin-left: 240px;
+	padding: 0 3% 0 3%;
+}
+@media (max-width: 992px) {
+	#body-content {
+		margin-left: 180px;
+	}
+}
+
+
+/* ------------------------------------------------------------- *
+ *  Sidebar
+/* ------------------------------------------------------------- */
+
+#sidebar {
+	position: fixed;
+	left: 0;
+	width: 240px;
+	height: 100%;
+	min-height: 100%;
+	background-color: #111;
+	z-index: 100;
+	-moz-box-shadow: 0 0 6px rgba(3,3,3,0.6);
+	-webkit-box-shadow: 0 0 6px rgba(3,3,3,0.6);
+	box-shadow: 0 0 6px rgba(3,3,3,0.6);
+}
+@media (max-width: 992px) {
+	#sidebar {
+		width: 180px;
+	}
+}
+
+#sidebar-logo {
+	display: block;
+	padding: 30px 10px 50px 10px;
+	text-align: center;
+}
+#sidebar-logo img {
+	max-width: 64px;
+}
+
+
+/* ------------------------------------------------------------- *
+ *  Sidebar navigation
+/* ------------------------------------------------------------- */
+
+#sidebar-nav {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: right;
+}
+#sidebar-nav > li {
+}
+#sidebar-nav > li > a {
+	display: block;
+	background-color: #1d1d1d;
+	margin: 1px 0;
+	padding: 5px 15px;
+	font-size: 13px;
+	font-weight: bold;
+	color: #DDD;
+}
+#sidebar-nav > li > a:hover,
+#sidebar-nav > li > a:focus {
+	background: #222;
+	color: #FFF;
+}
+#sidebar-nav > li > a.active {
+	background-color: #b12c0d;
+	color: #FFF;
+}
+
+
+/* ------------------------------------------------------------- *
+ * doc-section
+/* ------------------------------------------------------------- */
+
+.doc-section {
+	position: relative;
+	min-height: 100vh;
+	padding: 70px 0;
+
+	/* collapsing margins fix */
+	display: inline-block;
+	width: 100%;
+}
+
+/* doc-section inner */
+.doc-section-inner {
+}
+
+
+/* Individual sections 
+======================= */
+
+/* section start */
+#section-start {
+}
+
+.theme-cover-image {
+	margin-top: 40px;
+}
+@media (min-width: 768px) {
+	.theme-cover-image {
+		max-width: 400px;
+	}
+}
+
+.alert {
+	padding: 8px 35px 8px 14px;
+	margin-bottom: 20px;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	background-color: #fcf8e3;
+	border: 1px solid #fbeed5;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+
+.alert.alert-danger, 
+.alert.alert-error {
+	background-color: #f2dede;
+	border-color: #eed3d7;
+	color: #b94a48;
+}
+
+
+/* ------------------------------------------------------------- *
+ * Code Prettify
+ * Source: https://github.com/google/code-prettify
+/* ------------------------------------------------------------- */
+
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+	background: rgba(132, 132, 132, 0.1) !important;
+}
+
+
+/* the following should turn line numbering back on for all lines */
+li.L0, li.L1, li.L2, li.L3,
+li.L5, li.L6, li.L7, li.L8 {
+	list-style-type: decimal !important;
+}
+
+
+.com { color: #93a1a1 !important; }
+.lit { color: #195f91 !important; }
+.pun, .opn, .clo { color: #93a1a1 !important; }
+.fun { color: #dc322f !important; }
+.str, .atv { color: #D14 !important; }
+.kwd, .linenums .tag { color: #1e347b !important; }
+.typ, .atn, .dec, .var { color: teal !important; }
+.pln { color: #48484c !important; }
+
+pre.prettyprint {
+  padding: 8px 4px !important;
+  background-color: #FFF !important;
+  border: 1px solid #e1e1e8 !important;
+  -webkit-tab-size: 4 !important;
+  -moz-tab-size: 4 !important;
+  -ms-tab-size: 4 !important;
+  -o-tab-size: 4 !important;
+  tab-size: 4 !important;
+}
+.prettyprint.linenums {
+  -webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0 !important;
+     -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0 !important;
+          box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0 !important;
+}
+
+/* Specify class=linenums on a pre to get line numbering */
+ol.linenums {
+  margin: 0; /* IE indents via margin-left */
+} 
+ol.linenums li {
+  padding-left: 12px !important;
+  color: #bebec5 !important;
+  line-height: 1.5 !important;
+  text-shadow: 0 1px 0 #fff !important;
+}

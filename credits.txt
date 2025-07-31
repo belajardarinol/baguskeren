@@ -1,0 +1,66 @@
+//////////////////////////////////////////////////////////
+
+Credits
+
+Nui - Creative Portfolio Showcase HTML Website Template
+
+//////////////////////////////////////////////////////////
+
+
+========
+Fonts:
+========
+
+Body Font: https://fonts.google.com/specimen/Poppins
+Secondary Font: https://fonts.google.com/specimen/Syne
+Signature Font: https://fonts.google.com/specimen/Whisper
+
+
+
+========
+Icons:
+========
+
+Font Awesome (free version - 5.15.4) - https://fontawesome.com/
+
+
+
+=========
+Scripts:
+=========
+
+jQuery - http://www.jquery.com
+GSAP - https://greensock.com/gsap/
+GSAP ScrollToPlugin - https://greensock.com/scrolltoplugin/
+GSAP ScrollTrigger - https://greensock.com/scrolltrigger/
+Smooth Scrollbar - https://github.com/idiotWu/smooth-scrollbar/
+Swiper - https://swiperjs.com
+jQuery Mouse Wheel - https://github.com/jquery/jquery-mousewheel/
+Isotope - http://isotope.metafizzy.co
+Isotope Packery Mode - https://isotope.metafizzy.co/layout-modes/packery.html
+Imagesloaded - http://imagesloaded.desandro.com
+Lightgallery - http://sachinchoolur.github.io/lightGallery/
+uniMail - https://github.com/agragregra/uniMail
+
+
+
+========
+Images:
+========
+
+https://www.behance.net/nodia
+https://www.behance.net/samuelgriffin
+https://www.behance.net/patrickcurtet
+https://unsplash.com/
+
+
+========
+Videos:
+========
+
+https://www.pexels.com/videos/
+
+
+
+A super special thanks to those artists and authors who gave their permission to use their amazing works! THANK YOU! :)
+

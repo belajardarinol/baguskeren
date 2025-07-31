@@ -1,0 +1,46 @@
+//////////////////////////////////////////////////////////
+
+Nui - Creative Portfolio Showcase HTML Website Template
+
+Changelog
+
+//////////////////////////////////////////////////////////
+
+
+======================
+Updating information:
+======================
+
+Explanation: Because of the nature of the HTML, it is not possible to use dynamic features to update the template automatically. All code changes and updates must be made manually!
+
+IMPORTANT!: Before you proceed to update, make sure that you have made copies of all the template files, 
+in case something goes wrong then you can restore the previous version.
+
+The best way to update the template is to use some file comparison software to compare the differences between the old and new template versions (I recommend “WinMerge”: http://winmerge.org/). Then make the necessary changes. I know this may be time-consuming, but unfortunately, there is no easier solution.
+
+
+
+
+----------------------
+v1.1 - 25 August 2022
+----------------------
+
+- New: Added page "contact-simple.html"
+- Improved: Page header parallax
+- Improved: Minor CSS improvements
+
+Changed files:
+
+theme.css
+theme.js
+
+
+----------------------
+v1.0 - 20 August 2022
+----------------------
+
+Initial Release.
+
+
+
+
