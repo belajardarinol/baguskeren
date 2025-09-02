@@ -1,12 +1,8 @@
 <!DOCTYPE html>
-
 <!--
-	Template:   Nui - Creative Portfolio Showcase HTML Website Template
-	Author:     Themetorium
-	URL:        https://themetorium.net/
+	Converted to SPA
 -->
-
-<html lang="en">
+<html lang="en" data-spa="true">
 	<head>
 
 		<!-- Title -->
@@ -35,13 +31,35 @@
 
 		<!-- Libs and Plugins CSS -->
 		<link rel="stylesheet" href="assets/vendor/normalize/normalize.min.css"> <!-- Normalize CSS (https://necolas.github.io/normalize.css/) -->
-		<link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) Free version! -->
-		<link rel="stylesheet" href="assets/vendor/swiper/css/swiper-bundle.min.css"> <!-- Swiper CSS (https://swiperjs.com/) -->
-		<link rel="stylesheet" href="assets/vendor/lightgallery/css/lightgallery.min.css"> <!-- lightGallery CSS (http://sachinchoolur.github.io/lightGallery) -->
+		<link rel="stylesheet" href="assets/vendor/fontawesome/css/fontawesome-all.min.css"> <!-- Font Icons CSS (https://fontawesome.com) -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"> <!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/css/lightgallery-bundle.min.css"> <!-- lightGallery CSS -->
 
 		<!-- Template master CSS -->
 		<link rel="stylesheet" href="assets/css/helper.css">
 		<link rel="stylesheet" href="assets/css/theme.css">
+
+		<!-- SPA Styles -->
+		<style>
+			/* Loading indicator */
+			body.loading #page-transition {
+				display: block;
+				top: 0;
+				opacity: 1;
+			}
+			
+			/* 404 Page */
+			.tt-page-404 {
+				text-align: center;
+				padding: 100px 0;
+			}
+			
+			.tt-page-404 h1 {
+				font-size: 120px;
+				line-height: 1;
+				margin-bottom: 20px;
+			}
+		</style>
 
 	</head>
 
@@ -55,13 +73,14 @@
 	* Use class "tt-magic-cursor" to enable magic cursor.
 	* Note: there may be classes that are specific to this page only!
 	-->
-	<body id="body" class="tt-transition tt-boxed tt-smooth-scroll tt-magic-cursor">
+	<body id="body" class="tt-boxed tt-smooth-scroll tt-magic-cursor">
 
 
 		<!-- *************************************
 		*********** Begin body inner ************* 
 		************************************** -->
 		<main id="body-inner">
+			<!-- Content will be loaded here dynamically -->
 
 			<!-- Begin page transition (do not remove!!!) 
 			=========================== -->
@@ -1321,24 +1340,24 @@
 		===================== -->
 
 		<!-- Core JS -->
-		<script src="assets/vendor/jquery/jquery.min.js"></script> <!-- jquery JS (https://jquery.com) -->
+		<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script> <!-- jQuery -->
 
 		<!-- Libs and Plugins JS -->
-		<script src="assets/vendor/gsap/gsap.min.js"></script> <!-- GSAP JS (https://greensock.com/gsap/) -->
-		<script src="assets/vendor/gsap/ScrollToPlugin.min.js"></script> <!-- GSAP ScrollToPlugin JS (https://greensock.com/scrolltoplugin/) -->
-		<script src="assets/vendor/gsap/ScrollTrigger.min.js"></script> <!-- GSAP ScrollTrigger JS (https://greensock.com/scrolltrigger/) -->
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script> <!-- GSAP -->
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script> <!-- GSAP ScrollTrigger -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script> <!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/lightgallery@2.7.1/lightgallery.min.js"></script> <!-- lightGallery -->
+		<script src="https://cdn.jsdelivr.net/npm/isotope-layout@3/dist/isotope.pkgd.min.js"></script> <!-- Isotope -->
+		<script src="assets/vendor/smooth-scrollbar.js"></script> <!-- Smooth Scrollbar -->
+		<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script> <!-- imagesLoaded (jQuery plugin interface) -->
 
-		<script src="assets/vendor/smooth-scrollbar.js"></script> <!-- Smooth Scrollbar JS (https://github.com/idiotWu/smooth-scrollbar/) -->
-		<script src="assets/vendor/swiper/js/swiper-bundle.min.js"></script> <!-- Swiper JS (https://swiperjs.com/) -->
-		<script src="assets/vendor/isotope/imagesloaded.pkgd.min.js"></script> <!-- imagesloaded JS (more info: https://imagesloaded.desandro.com/) -->
-		<script src="assets/vendor/isotope/isotope.pkgd.min.js"></script> <!-- Isotope JS (http://isotope.metafizzy.co) -->
-		<script src="assets/vendor/isotope/packery-mode.pkgd.min.js"></script> <!-- Isotope Packery Mode JS (https://isotope.metafizzy.co/layout-modes/packery.html) -->
-		<script src="assets/vendor/lightgallery/js/lightgallery-all.min.js"></script> <!-- lightGallery Plugins JS (http://sachinchoolur.github.io/lightGallery) -->
-		<script src="assets/vendor/jquery.mousewheel.min.js"></script> <!-- A jQuery plugin that adds cross browser mouse wheel support (https://github.com/jquery/jquery-mousewheel) -->
-
-		<!-- Template master JS -->
+		<!-- Template functions -->
 		<script src="assets/js/theme.js"></script>
-
+		
+		<!-- Disable SPA to allow full page loads so theme JS works normally -->
+		<script>window.__DISABLE_SPA__ = true;</script>
+		<!-- SPA Application -->
+		<script src="app.js"></script>
 
 
 	</body>
