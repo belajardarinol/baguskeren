@@ -2,7 +2,7 @@
 * Documentation JS
 * 
 * Author:      Themetorium
-* URL:         http://themetorium.net
+* URL:         http://ruangliterasikaliurang.com
 *
 ================================================================= */
 
@@ -15,17 +15,17 @@
 
 $(function () {
    $(document).on("scroll", onScroll);
-    
+
    //smoothscroll
    $('#sidebar-nav > li > a').on('click', function (e) {
       e.preventDefault();
       $(document).off("scroll");
-        
+
       $('#sidebar-nav > li > a').each(function () {
          $(this).removeClass('active');
       })
       $(this).addClass('active');
-      
+
       var target = this.hash,
          menu = target;
       $target = $(target);
@@ -38,7 +38,7 @@ $(function () {
    });
 });
 
-function onScroll(event){
+function onScroll(event) {
    var scrollPos = $(document).scrollTop();
    $('#sidebar-nav > li > a').each(function () {
       var currLink = $(this);
@@ -47,7 +47,7 @@ function onScroll(event){
          $('#sidebar-nav > li > a').removeClass("active");
          currLink.addClass("active");
       }
-      else{
+      else {
          currLink.removeClass("active");
       }
    });

@@ -3,7 +3,7 @@
 * 
 * Template:    Nui - Creative Portfolio Showcase HTML Website Template
 * Author:      Themetorium
-* URL:         https://themetorium.net/
+* URL:         https://ruangliterasikaliurang.com/
 ================================================================= */
 
 
@@ -58,7 +58,7 @@
 	let firefoxAgent = navigator.userAgent.indexOf("Firefox") > -1;
 
 	// Add class "is-firefox" to </body>
-	if(firefoxAgent) {
+	if (firefoxAgent) {
 		$("body").addClass("is-firefox");
 	}
 
@@ -72,10 +72,10 @@
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(navigator.userAgent) ? true : false;
 
 	// Add class "is-mobile" to </body>
-	if(isMobile) {
+	if (isMobile) {
 		$("body").addClass("is-mobile");
 	}
-	
+
 
 
 	// =================
@@ -83,10 +83,10 @@
 	// =================
 
 	if ($("body").hasClass("tt-transition")) {
-		
+
 		// Wait until the whole page is loaded.
 		$(window).on("load", function () {
-			setTimeout(function(){
+			setTimeout(function () {
 				HideLoad(); // call out animations.
 			}, 0);
 		});
@@ -95,15 +95,15 @@
 		// Transitions In (when "ptr-overlay" slides in).
 		// =================
 		function RevealLoad() {
-			var tl_transitIn = gsap.timeline({ defaults: { duration: 1.5, ease: Expo.easeInOut }});
+			var tl_transitIn = gsap.timeline({ defaults: { duration: 1.5, ease: Expo.easeInOut } });
 
-				if ($("#page-transition").length) {
-					 tl_transitIn.set("#page-transition", { autoAlpha: 1 });
-					 tl_transitIn.to(".ptr-overlay", { scaleY: 1, transformOrigin: "center bottom" }, 0);
-					 tl_transitIn.to(".ptr-preloader", { autoAlpha: 1 }, 0.4);
-				}
-				tl_transitIn.to("#content-wrap", { y: -80, autoAlpha: 0 }, 0);
-				tl_transitIn.to("#tt-header", { y: -20, autoAlpha: 0 }, 0);
+			if ($("#page-transition").length) {
+				tl_transitIn.set("#page-transition", { autoAlpha: 1 });
+				tl_transitIn.to(".ptr-overlay", { scaleY: 1, transformOrigin: "center bottom" }, 0);
+				tl_transitIn.to(".ptr-preloader", { autoAlpha: 1 }, 0.4);
+			}
+			tl_transitIn.to("#content-wrap", { y: -80, autoAlpha: 0 }, 0);
+			tl_transitIn.to("#tt-header", { y: -20, autoAlpha: 0 }, 0);
 		}
 
 
@@ -112,99 +112,99 @@
 		function HideLoad() {
 			var tl_transitOut = gsap.timeline();
 
-				 if ($("#page-transition").length) {
-					tl_transitOut.to(".ptr-preloader", { duration: 1.5, autoAlpha: 0, ease: Expo.easeInOut });
-					tl_transitOut.to(".ptr-overlay", { duration: 1.5, scaleY: 0, transformOrigin: "center top", ease: Expo.easeInOut }, 0.3);
-				 }
+			if ($("#page-transition").length) {
+				tl_transitOut.to(".ptr-preloader", { duration: 1.5, autoAlpha: 0, ease: Expo.easeInOut });
+				tl_transitOut.to(".ptr-overlay", { duration: 1.5, scaleY: 0, transformOrigin: "center top", ease: Expo.easeInOut }, 0.3);
+			}
 
-				 // tt-Header appear
-				 tl_transitOut.from("#tt-header", { duration: 1.5, y: 20, autoAlpha: 0, ease: Expo.easeInOut, clearProps:"all" }, 0.6);
+			// tt-Header appear
+			tl_transitOut.from("#tt-header", { duration: 1.5, y: 20, autoAlpha: 0, ease: Expo.easeInOut, clearProps: "all" }, 0.6);
 
-				 // tt-Footer appear
-				 tl_transitOut.from("#tt-footer", { duration: 1.5, y: 20, autoAlpha: 0, ease: Expo.easeInOut, clearProps:"all" }, 0.2);
+			// tt-Footer appear
+			tl_transitOut.from("#tt-footer", { duration: 1.5, y: 20, autoAlpha: 0, ease: Expo.easeInOut, clearProps: "all" }, 0.2);
 
-				 // Page header image appear
-				 if ($(".ph-image").length) {
-				 	if ($("#page-header").hasClass("ph-bg-image")) {
-				 		tl_transitOut.from(".ph-image img, .ph-video", { duration: 2, y: 80, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps:"all" }, 0.8);
-				 	} else {
-				 		tl_transitOut.from(".ph-image", { duration: 2, y: 80, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps:"all" }, 1.2);
-				 	}
-				 }
-				 
-				 // Page header elements appear (elements with class "ph-appear")
-				 var $phAppear = $(".ph-appear");
-				 if ($phAppear.length) {
-				 	tl_transitOut.from($phAppear, { duration: 2, y: 40, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps:"all" }, 1.5);
-				 }
+			// Page header image appear
+			if ($(".ph-image").length) {
+				if ($("#page-header").hasClass("ph-bg-image")) {
+					tl_transitOut.from(".ph-image img, .ph-video", { duration: 2, y: 80, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps: "all" }, 0.8);
+				} else {
+					tl_transitOut.from(".ph-image", { duration: 2, y: 80, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps: "all" }, 1.2);
+				}
+			}
 
-				 // Portfolio interactive elements appear
-				 var $pi = $(".portfolio-interactive");
-				 var $piItem = $(".portfolio-interactive-item");
-				 var $piGhost = $(".portfolio-interactive-ghost");
-				 var $piPagination = $(".portfolio-interactive .tt-pagination");
+			// Page header elements appear (elements with class "ph-appear")
+			var $phAppear = $(".ph-appear");
+			if ($phAppear.length) {
+				tl_transitOut.from($phAppear, { duration: 2, y: 40, autoAlpha: 0, stagger: 0.3, ease: Expo.easeOut, clearProps: "all" }, 1.5);
+			}
 
-				 if ($pi.length) {
-				 	if ($pi.hasClass("pi-full")) {
+			// Portfolio interactive elements appear
+			var $pi = $(".portfolio-interactive");
+			var $piItem = $(".portfolio-interactive-item");
+			var $piGhost = $(".portfolio-interactive-ghost");
+			var $piPagination = $(".portfolio-interactive .tt-pagination");
 
-				 		if ($pi.hasClass("pi-inline")) {
-					 		tl_transitOut.from($piItem, { duration: 2, y: 60, autoAlpha: 0, stagger: 0.15, ease: Expo.easeOut, clearProps:"all" }, 1.3);
-					 	} else {
-					 		tl_transitOut.from($piItem, { duration: 2, y: 100, autoAlpha: 0, stagger: 0.15, ease: Expo.easeOut, clearProps:"all" }, 1.3);
-					 	}
+			if ($pi.length) {
+				if ($pi.hasClass("pi-full")) {
 
-					 	if ($piGhost.length) {
-					 		$piGhost.wrapInner('<div class="pi-ghost-appear"></div>')
-					 		tl_transitOut.from(".pi-ghost-appear", { duration: 2, y: 80, autoAlpha: 0, ease: Expo.easeOut, clearProps:"all" }, 1.5);
-					 	}
+					if ($pi.hasClass("pi-inline")) {
+						tl_transitOut.from($piItem, { duration: 2, y: 60, autoAlpha: 0, stagger: 0.15, ease: Expo.easeOut, clearProps: "all" }, 1.3);
+					} else {
+						tl_transitOut.from($piItem, { duration: 2, y: 100, autoAlpha: 0, stagger: 0.15, ease: Expo.easeOut, clearProps: "all" }, 1.3);
+					}
 
-					 	if ($piPagination.length) {
-					 		$piPagination.wrap('<div class="pi-pagination-appear"></div>')
-					 		tl_transitOut.from(".pi-pagination-appear", { duration: 2, y: 60, autoAlpha: 0, ease: Expo.easeOut, clearProps:"all" }, 3);
-					 	}
-				 	}
-				 }
+					if ($piGhost.length) {
+						$piGhost.wrapInner('<div class="pi-ghost-appear"></div>')
+						tl_transitOut.from(".pi-ghost-appear", { duration: 2, y: 80, autoAlpha: 0, ease: Expo.easeOut, clearProps: "all" }, 1.5);
+					}
 
-				 // Portfolio slider elements appear (full heigth slider)
-				 var $pciElem = $(".tt-psc-elem");
-				 if ($pciElem.length) {
-				 	$pciElem.wrap('<div class="tt-ps-appear"></div>');
-				 	tl_transitOut.fromTo((".tt-ps-appear"), { autoAlpha: 0, x: 40, scaleX: 1.1, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", stagger: 0.15, ease: Expo.easeOut, clearProps:"all" }, 1.4);
-				 }
+					if ($piPagination.length) {
+						$piPagination.wrap('<div class="pi-pagination-appear"></div>')
+						tl_transitOut.from(".pi-pagination-appear", { duration: 2, y: 60, autoAlpha: 0, ease: Expo.easeOut, clearProps: "all" }, 3);
+					}
+				}
+			}
 
-				 // Portfolio carousel elements appear
-				 var $pciTitle = $(".tt-pci-title");
-				 var $pciCategory = $(".tt-pci-category");
-				 if ($pciTitle.length) {
-				 	tl_transitOut.fromTo($pciTitle, { autoAlpha: 0, x: 100, scaleX: 1.3, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps:"all" }, 1.4);
-				 }
-				 if ($pciCategory.length) {
-				 	tl_transitOut.fromTo($pciCategory, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps:"all" }, 1.6);
-				 }
+			// Portfolio slider elements appear (full heigth slider)
+			var $pciElem = $(".tt-psc-elem");
+			if ($pciElem.length) {
+				$pciElem.wrap('<div class="tt-ps-appear"></div>');
+				tl_transitOut.fromTo((".tt-ps-appear"), { autoAlpha: 0, x: 40, scaleX: 1.1, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", stagger: 0.15, ease: Expo.easeOut, clearProps: "all" }, 1.4);
+			}
 
-				 // Sliding sidebar trigger appear
-				 var $ssWrap = $(".tt-sliding-sidebar-wrap");
-				 var $ssTrigger = $(".tt-sliding-sidebar-trigger");
-				 if ($ssWrap.length) {
-					 if(!isMobile) {
-						 if ($ssWrap.hasClass("tt-ss-right")) {
-						 	tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, x: 50, ease: Expo.easeOut }, 2);
-						 } else {
-						 	tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, x: -50, ease: Expo.easeOut }, 2);
-						 }
-					 } else {
-					 	tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, y: 20, ease: Expo.easeOut }, 2);
-					 }
-				 }
-				 
-				 // Page other elements appear
-				 if ($("#page-content").length) {
-				 	tl_transitOut.from("#page-content", { duration: 2, autoAlpha: 0, y: 80, ease: Expo.easeOut, clearProps:"all" }, 0.8);
-				 }
+			// Portfolio carousel elements appear
+			var $pciTitle = $(".tt-pci-title");
+			var $pciCategory = $(".tt-pci-category");
+			if ($pciTitle.length) {
+				tl_transitOut.fromTo($pciTitle, { autoAlpha: 0, x: 100, scaleX: 1.3, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps: "all" }, 1.4);
+			}
+			if ($pciCategory.length) {
+				tl_transitOut.fromTo($pciCategory, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 1.5, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps: "all" }, 1.6);
+			}
 
-				 if ($("#page-transition").length) {
-				 	tl_transitOut.set("#page-transition", { duration: 1.5, autoAlpha: 0, ease: Expo.easeInOut });
-				 }
+			// Sliding sidebar trigger appear
+			var $ssWrap = $(".tt-sliding-sidebar-wrap");
+			var $ssTrigger = $(".tt-sliding-sidebar-trigger");
+			if ($ssWrap.length) {
+				if (!isMobile) {
+					if ($ssWrap.hasClass("tt-ss-right")) {
+						tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, x: 50, ease: Expo.easeOut }, 2);
+					} else {
+						tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, x: -50, ease: Expo.easeOut }, 2);
+					}
+				} else {
+					tl_transitOut.from($ssTrigger, { duration: 1.5, autoAlpha: 0, y: 20, ease: Expo.easeOut }, 2);
+				}
+			}
+
+			// Page other elements appear
+			if ($("#page-content").length) {
+				tl_transitOut.from("#page-content", { duration: 2, autoAlpha: 0, y: 80, ease: Expo.easeOut, clearProps: "all" }, 0.8);
+			}
+
+			if ($("#page-transition").length) {
+				tl_transitOut.set("#page-transition", { duration: 1.5, autoAlpha: 0, ease: Expo.easeInOut });
+			}
 		}
 
 
@@ -227,15 +227,15 @@
 			.not(".lg-trigger") // omit from selection
 			.not(".tt-btn-disabled") // omit from selection
 			.not(".no-transition") // omit from selection
-			.on('click', function(e) {
+			.on('click', function (e) {
 				e.preventDefault();
 
 				setTimeout(function (url) {
 					window.location = url
 				}, 1500, this.href);
-				
+
 				RevealLoad(); // call in animations.
-		});
+			});
 
 	}
 
@@ -249,8 +249,8 @@
 	if ($("body").hasClass("tt-smooth-scroll")) {
 
 		// Not for mobile devices!
-		if(!isMobile) {
-			
+		if (!isMobile) {
+
 			var Scrollbar = window.Scrollbar;
 
 			// AnchorPlugin (URL with hash links load in the right position)
@@ -285,7 +285,7 @@
 					if (target) {
 						scrollbar.scrollIntoView(target, {
 							offsetTop: parseFloat(target.getAttribute('data-offset')) || 0 // Change to set default offset
-				   	});
+						});
 					}
 				};
 
@@ -322,7 +322,7 @@
 				scrollPositionY = 0,
 				bodyScrollBar = Scrollbar.init(document.getElementById("scroll-container"));
 
-			bodyScrollBar.addListener(({ offset }) => {  
+			bodyScrollBar.addListener(({ offset }) => {
 				scrollPositionX = offset.x;
 				scrollPositionY = offset.y;
 			});
@@ -348,7 +348,7 @@
 			// Expl: Since Smooth Scrollbar doesn't support element fixed position inside "scroll-container" move the "tt-header" out of it.
 			// ==========================================
 			if ($("#tt-header").hasClass("tt-header-fixed")) {
-				$("#scroll-container").before( $("#tt-header"));
+				$("#scroll-container").before($("#tt-header"));
 			}
 
 		}
@@ -362,11 +362,11 @@
 	// https://codepen.io/Sahil89/pen/MQbdNR
 	// https://greensock.com/forums/topic/17490-follow-button-effect/?tab=comments#comment-81107
 	// =======================================================================================
-	
+
 	if ($("body").not(".is-mobile").hasClass("tt-magic-cursor")) {
 		if ($(window).width() > 1024) {
 			$(".magnetic-item").wrap('<div class="magnetic-wrap"></div>');
-			
+
 			if ($("a.magnetic-item").length) {
 				$("a.magnetic-item").addClass("not-hide-cursor");
 			}
@@ -383,12 +383,12 @@
 			var $ballBorderWidth = 2; // Ball default border width
 
 			gsap.set($ball, {  // scale from middle and style ball
-				xPercent: -50, 
-				yPercent: -50, 
+				xPercent: -50,
+				yPercent: -50,
 				width: $ballWidth,
 				height: $ballHeight,
-				borderWidth: $ballBorderWidth, 
-				opacity: $ballOpacity 
+				borderWidth: $ballBorderWidth,
+				opacity: $ballOpacity
 			});
 
 			document.addEventListener("mousemove", mouseMove);
@@ -409,7 +409,7 @@
 				}
 			}
 
-			$(".magnetic-wrap").mousemove(function(e) {
+			$(".magnetic-wrap").mousemove(function (e) {
 				parallaxCursor(e, this, 2); // magnetic ball = low number is more attractive
 				callParallax(e, this);
 			});
@@ -424,7 +424,7 @@
 				var relY = e.clientY - boundingRect.top;
 
 				gsap.to(target, {
-					duration: 0.3, 
+					duration: 0.3,
 					x: ((relX - boundingRect.width / 2) / boundingRect.width) * movement,
 					y: ((relY - boundingRect.height / 2) / boundingRect.height) * movement,
 					ease: Power2.easeOut
@@ -437,7 +437,7 @@
 				var relY = e.clientY - rect.top;
 				$pos.x = rect.left + rect.width / 2 + (relX - rect.width / 2) / movement;
 				$pos.y = rect.top + rect.height / 2 + (relY - rect.height / 2) / movement;
-				gsap.to($ball, {duration: 0.3, x: $pos.x, y: $pos.y });
+				gsap.to($ball, { duration: 0.3, x: $pos.x, y: $pos.y });
 			}
 
 
@@ -445,56 +445,56 @@
 			// ======================
 
 			// Magnetic item hover.
-			$(".magnetic-wrap").on("mouseenter mouseover", function(e) {
+			$(".magnetic-wrap").on("mouseenter mouseover", function (e) {
 				$ball.addClass("magnetic-active");
 				gsap.to($ball, { duration: 0.3, width: 70, height: 70, opacity: 1 });
 				$active = true;
-			}).on("mouseleave", function(e) {
+			}).on("mouseleave", function (e) {
 				$ball.removeClass("magnetic-active");
 				gsap.to($ball, { duration: 0.3, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
-				gsap.to(this.querySelector(".magnetic-item"), { duration: 0.3, x: 0, y: 0, clearProps:"all" });
+				gsap.to(this.querySelector(".magnetic-item"), { duration: 0.3, x: 0, y: 0, clearProps: "all" });
 				$active = false;
 			});
 
 			// Alternative cursor style on hover.
 			$(".cursor-alter, .tt-main-menu-list > li > a, .tt-main-menu-list > li > .tt-submenu-trigger > a")
-			.not(".magnetic-item") // omit from selection.
-			.on("mouseenter", function() {
-				gsap.to($ball, {
-					duration: 0.3, 
-					borderWidth: 0, 
-					opacity: 0.2, 
-					backgroundColor: "#CCC", 
-					width: "100px", 
-					height: "100px", 
+				.not(".magnetic-item") // omit from selection.
+				.on("mouseenter", function () {
+					gsap.to($ball, {
+						duration: 0.3,
+						borderWidth: 0,
+						opacity: 0.2,
+						backgroundColor: "#CCC",
+						width: "100px",
+						height: "100px",
+					});
+				}).on("mouseleave", function () {
+					gsap.to($ball, {
+						duration: 0.3,
+						borderWidth: $ballBorderWidth,
+						opacity: $ballOpacity,
+						backgroundColor: "transparent",
+						width: $ballWidth,
+						height: $ballHeight,
+						clearProps: "backgroundColor"
+					});
 				});
-			}).on("mouseleave", function() {
-				gsap.to($ball, {
-					duration: 0.3, 
-					borderWidth: $ballBorderWidth, 
-					opacity: $ballOpacity, 
-					backgroundColor: "transparent", 
-					width: $ballWidth, 
-					height: $ballHeight, 
-					clearProps:"backgroundColor" 
-				});
-			});
 
 			// Overlay menu caret hover.
-			$(".tt-ol-submenu-caret-wrap .magnetic-wrap").on("mouseenter", function() {
+			$(".tt-ol-submenu-caret-wrap .magnetic-wrap").on("mouseenter", function () {
 				gsap.to($ball, { duration: 0.3, scale: 0.6, borderWidth: 3 });
-			}).on("mouseleave", function() {
+			}).on("mouseleave", function () {
 				gsap.to($ball, { duration: 0.3, scale: 1, borderWidth: $ballBorderWidth });
 			});
 
 			// Cursor view on hover (data attribute "data-cursor="...").
-			$("[data-cursor]").each(function() {
-				$(this).on("mouseenter", function() {
+			$("[data-cursor]").each(function () {
+				$(this).on("mouseenter", function () {
 					$ball.addClass("ball-view").append('<div class="ball-view-inner"></div>');
 					$(".ball-view-inner").append($(this).attr("data-cursor"));
 					gsap.to($ball, { duration: 0.3, yPercent: -75, width: 95, height: 95, opacity: 1, borderWidth: 0 });
 					gsap.to(".ball-view-inner", { duration: 0.3, scale: 1, autoAlpha: 1 });
-				}).on("mouseleave", function() {
+				}).on("mouseleave", function () {
 					gsap.to($ball, { duration: 0.3, yPercent: -50, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity, borderWidth: $ballBorderWidth });
 					$ball.removeClass("ball-view").find(".ball-view-inner").remove();
 				});
@@ -502,57 +502,57 @@
 			});
 
 			// Cursor drag on hover (class "cursor-drag"). For Swiper sliders.
-			$(".swiper").each(function() {
+			$(".swiper").each(function () {
 				if ($(this).parent().attr("data-simulate-touch") == "true") {
 					if ($(this).parent().hasClass("cursor-drag")) {
-						$(this).on("mouseenter", function() {
+						$(this).on("mouseenter", function () {
 							$ball.append('<div class="ball-drag"></div>');
 							gsap.to($ball, { duration: 0.3, width: 60, height: 60, opacity: 1 });
-						}).on("mouseleave", function() {
+						}).on("mouseleave", function () {
 							$ball.find(".ball-drag").remove();
 							gsap.to($ball, { duration: 0.3, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
 						});
 						$(this).addClass("not-hide-cursor");
 
 						// Ignore "data-cursor" on hover.
-						$(this).find("[data-cursor]").on("mouseenter mouseover", function() {
+						$(this).find("[data-cursor]").on("mouseenter mouseover", function () {
 							$ball.find(".ball-drag").remove();
 							return false;
-						}).on("mouseleave", function() {
+						}).on("mouseleave", function () {
 							$ball.append('<div class="ball-drag"></div>');
 							gsap.to($ball, { duration: 0.3, width: 60, height: 60, opacity: 1 });
 						});
 					}
 				}
 			});
-			
+
 			// Cursor drag on mouse down / click and hold effect (class "cursor-drag-mouse-down"). For Swiper sliders.
-			$(".swiper").each(function() {
+			$(".swiper").each(function () {
 				if ($(this).parent().attr("data-simulate-touch") == "true") {
 					if ($(this).parent().hasClass("cursor-drag-mouse-down")) {
-						$(this).on("mousedown pointerdown", function(e) {
+						$(this).on("mousedown pointerdown", function (e) {
 							if (e.which === 1) { // Affects the left mouse button only!
 								gsap.to($ball, { duration: 0.2, width: 60, height: 60, opacity: 1 });
 								$ball.append('<div class="ball-drag"></div>');
 							}
-						}).on("mouseup pointerup", function() {
+						}).on("mouseup pointerup", function () {
 							$ball.find(".ball-drag").remove();
 							if ($(this).find("[data-cursor]:hover").length) {
 							} else {
 								gsap.to($ball, { duration: 0.2, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
 							}
-						}).on("mouseleave", function() {
+						}).on("mouseleave", function () {
 							$ball.find(".ball-drag").remove();
 							gsap.to($ball, { duration: 0.2, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
 						});
 
 						// Ignore "data-cursor" on mousedown.
-						$(this).find("[data-cursor]").on("mousedown pointerdown", function() {
+						$(this).find("[data-cursor]").on("mousedown pointerdown", function () {
 							return false;
 						});
 
 						// Ignore "data-cursor" on hover.
-						$(this).find("[data-cursor]").on("mouseenter mouseover", function() {
+						$(this).find("[data-cursor]").on("mouseenter mouseover", function () {
 							$ball.find(".ball-drag").remove();
 							return false;
 						});
@@ -561,14 +561,14 @@
 			});
 
 			// Cursor close on hover.
-			$(".cursor-close").each(function() {
+			$(".cursor-close").each(function () {
 				$(this).addClass("ball-close-enabled");
-				$(this).on("mouseenter", function() {
+				$(this).on("mouseenter", function () {
 					$ball.addClass("ball-close-enabled");
 					$ball.append('<div class="ball-close">Close</div>');
 					gsap.to($ball, { duration: 0.3, yPercent: -75, width: 80, height: 80, opacity: 1 });
 					gsap.from(".ball-close", { duration: 0.3, scale: 0, autoAlpha: 0 });
-				}).on("mouseleave click", function() {
+				}).on("mouseleave click", function () {
 					$ball.removeClass("ball-close-enabled");
 					gsap.to($ball, { duration: 0.3, yPercent: -50, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
 					$ball.find(".ball-close").remove();
@@ -576,25 +576,25 @@
 
 				// Hover on "cursor-close" inner elements.
 				$(".cursor-close a, .cursor-close button, .cursor-close .tt-btn, .cursor-close .hide-cursor")
-				.not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
-				.on("mouseenter", function() {
-					$ball.removeClass("ball-close-enabled");
-				}).on("mouseleave", function() {
-					$ball.addClass("ball-close-enabled");
-				});
+					.not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
+					.on("mouseenter", function () {
+						$ball.removeClass("ball-close-enabled");
+					}).on("mouseleave", function () {
+						$ball.addClass("ball-close-enabled");
+					});
 			});
 
 			// Blog interactive title link hover.
-			$(".blog-interactive-item").each(function() {
+			$(".blog-interactive-item").each(function () {
 				var $biItem = $(this);
 				if ($biItem.find(".bi-item-image").length) {
-					$biItem.find(".bi-item-title a").on("mouseenter mouseover", function() {
+					$biItem.find(".bi-item-title a").on("mouseenter mouseover", function () {
 						$("#magic-cursor").addClass("blog-interactive-hover-on");
 						$biItem.find(".bi-item-image").appendTo($ball);
 						gsap.to($ball, { duration: 0.3, width: "20vw", height: "20vw", opacity: 1 });
-					}).on("mouseleave", function() {
+					}).on("mouseleave", function () {
 						$("#magic-cursor").removeClass("blog-interactive-hover-on");
-						$ball.find(".bi-item-image").appendTo($biItem); 
+						$ball.find(".bi-item-image").appendTo($biItem);
 						gsap.to($ball, { duration: 0.3, width: $ballWidth, height: $ballHeight, opacity: $ballOpacity });
 					});
 					$biItem.find(".bi-item-title a").addClass("not-hide-cursor");
@@ -602,21 +602,21 @@
 				}
 			});
 
-			
+
 			// Show/hide magic cursor
 			// =======================
 
 			// Hide on hover.
 			$("a, button, .tt-btn, .tt-form-control, .tt-form-radio, .tt-form-check, .hide-cursor") // class "hide-cursor" is for global use.
-			.not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
-			.not(".cursor-alter") // omit from selection
-			.not(".tt-main-menu-list > li > a") // omit from selection
-			.not(".tt-main-menu-list > li > .tt-submenu-trigger > a") // omit from selection
-			.on("mouseenter", function() {
-				gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
-			}).on("mouseleave", function() {
-				gsap.to($ball, { duration: 0.3, scale: 1, opacity: $ballOpacity });
-			});
+				.not(".not-hide-cursor") // omit from selection (class "not-hide-cursor" is for global use).
+				.not(".cursor-alter") // omit from selection
+				.not(".tt-main-menu-list > li > a") // omit from selection
+				.not(".tt-main-menu-list > li > .tt-submenu-trigger > a") // omit from selection
+				.on("mouseenter", function () {
+					gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
+				}).on("mouseleave", function () {
+					gsap.to($ball, { duration: 0.3, scale: 1, opacity: $ballOpacity });
+				});
 
 			// Hide on click.
 			$("a")
@@ -626,23 +626,23 @@
 				.not('[href^="tel"]') // omit from selection.
 				.not(".lg-trigger") // omit from selection.
 				.not(".tt-btn-disabled") // omit from selection.
-				.on('click', function() {
+				.on('click', function () {
 					gsap.to($ball, { duration: 0.3, scale: 1.3, autoAlpha: 0 });
-			});
+				});
 
 			// Show/hide on document leave/enter.
-			$(document).on("mouseleave", function() {
+			$(document).on("mouseleave", function () {
 				gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 0 });
-			}).on("mouseenter", function() {
-				gsap.to("#magic-cursor", {duration: 0.3, autoAlpha: 1 });
+			}).on("mouseenter", function () {
+				gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
 			});
 
 			// Show as the mouse moves.
-			$(document).mousemove(function() {
-				gsap.to("#magic-cursor", {duration: 0.3, autoAlpha: 1 });
+			$(document).mousemove(function () {
+				gsap.to("#magic-cursor", { duration: 0.3, autoAlpha: 1 });
 			});
 		}
-	} 
+	}
 
 
 
@@ -653,44 +653,44 @@
 	ScrollTrigger.config({ limitCallbacks: true });
 
 	gsap.utils.toArray(".tt-lazy").forEach(image => {
-		
+
 		let newSRC = image.dataset.src,
-			 newImage = document.createElement("img"),
+			newImage = document.createElement("img"),
 
-		loadImage = () => {
-			newImage.onload = () => {
-				newImage.onload = null; // avoid recursion
-				newImage.src = image.src; // swap the src
-				image.src = newSRC;
-				// place the low-res version on TOP and then fade it out.
-				gsap.set(newImage, {
-					position: "absolute", 
-					top: image.offsetTop, 
-					left: image.offsetLeft, 
-					width: image.offsetWidth, 
-					height: image.offsetHeight
-				});
-				image.parentNode.appendChild(newImage);
-				gsap.to(newImage, {
-					opacity: 0, 
-					onComplete: () => {
-						newImage.parentNode.removeChild(newImage);
-						image.removeAttribute("data-src"); // remove "data-src" attribute if image is loaded
-					}
-				});
-				st && st.kill();
-			}
-			newImage.src = newSRC;
+			loadImage = () => {
+				newImage.onload = () => {
+					newImage.onload = null; // avoid recursion
+					newImage.src = image.src; // swap the src
+					image.src = newSRC;
+					// place the low-res version on TOP and then fade it out.
+					gsap.set(newImage, {
+						position: "absolute",
+						top: image.offsetTop,
+						left: image.offsetLeft,
+						width: image.offsetWidth,
+						height: image.offsetHeight
+					});
+					image.parentNode.appendChild(newImage);
+					gsap.to(newImage, {
+						opacity: 0,
+						onComplete: () => {
+							newImage.parentNode.removeChild(newImage);
+							image.removeAttribute("data-src"); // remove "data-src" attribute if image is loaded
+						}
+					});
+					st && st.kill();
+				}
+				newImage.src = newSRC;
 
-			ScrollTrigger.refresh(true);
-		}, 
+				ScrollTrigger.refresh(true);
+			},
 
-		st = ScrollTrigger.create({
-			trigger: image,
-			start: "-50% bottom",
-			onEnter: loadImage,
-			onEnterBack: loadImage // make sure it works in either direction
-		});
+			st = ScrollTrigger.create({
+				trigger: image,
+				start: "-50% bottom",
+				onEnter: loadImage,
+				onEnterBack: loadImage // make sure it works in either direction
+			});
 	});
 
 
@@ -702,29 +702,29 @@
 	// Keeping sub-menus inside screen (useful if multi level sub-menus are used). Effect on large screens only!
 	// More info: http://stackoverflow.com/questions/17985334/jquery-solution-for-keeping-dropdown-dropdown-inside-screen
 	if ($(window).width() > 1024) {
-		$(".tt-submenu-trigger").parent().on("mouseenter", function() {
+		$(".tt-submenu-trigger").parent().on("mouseenter", function () {
 			var menu = $("> .tt-submenu", this);
 			var menupos = $(menu).offset();
 
 			if (menupos.left + menu.width() > $(window).width()) {
 				var newpos = -$(menu).width();
 
-				menu.css({ left: newpos });    
+				menu.css({ left: newpos });
 			}
 		});
 	}
 
 	// Main menu hover
-	$(".tt-main-menu-list").on("mouseenter", function() {
+	$(".tt-main-menu-list").on("mouseenter", function () {
 		$(this).addClass("tt-mm-hover");
-	}).on("mouseleave", function() {
+	}).on("mouseleave", function () {
 		$(this).removeClass("tt-mm-hover");
 	});
 
 	// Submenu wrap hover
-	$(".tt-submenu-wrap").on("mouseenter", function() {
+	$(".tt-submenu-wrap").on("mouseenter", function () {
 		$(this).addClass("tt-submenu-open");
-	}).on("mouseleave", function() {
+	}).on("mouseleave", function () {
 		$(this).removeClass("tt-submenu-open");
 	});
 
@@ -733,7 +733,7 @@
 	// ===============================
 
 	// Open/close mobile menu on toggle button click
-	$("#tt-m-menu-toggle-btn-wrap").on("click", function() {
+	$("#tt-m-menu-toggle-btn-wrap").on("click", function () {
 		$("html").toggleClass("tt-no-scroll");
 		$("body").toggleClass("tt-m-menu-open").addClass("tt-m-menu-active");
 		if ($("body").hasClass("tt-m-menu-open")) {
@@ -743,40 +743,40 @@
 
 			// Menu in animations
 			var tl_MenuIn = gsap.timeline({
-				onComplete: function() { 
-					$("body").removeClass("tt-m-menu-toggle-no-click"); 
+				onComplete: function () {
+					$("body").removeClass("tt-m-menu-toggle-no-click");
 				}
 			});
 
-				 tl_MenuIn.to(".tt-main-menu", { duration: 0.4, autoAlpha: 1 });
-				 tl_MenuIn.from(".tt-main-menu-content > ul > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps:"all" });
+			tl_MenuIn.to(".tt-main-menu", { duration: 0.4, autoAlpha: 1 });
+			tl_MenuIn.from(".tt-main-menu-content > ul > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps: "all" });
 
 			// On menu link click
 			$(".tt-main-menu a, .tt-logo a")
-			.not('[target="_blank"]') // omit from selection
-			.not('[href^="#"]') // omit from selection
-			.not('[href^="mailto"]') // omit from selection
-			.not('[href^="tel"]') // omit from selection
-			.on('click', function() {
-				gsap.set("#content-wrap", { autoAlpha: 0 });
-				gsap.to(".tt-main-menu-content > ul > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-			});
+				.not('[target="_blank"]') // omit from selection
+				.not('[href^="#"]') // omit from selection
+				.not('[href^="mailto"]') // omit from selection
+				.not('[href^="tel"]') // omit from selection
+				.on('click', function () {
+					gsap.set("#content-wrap", { autoAlpha: 0 });
+					gsap.to(".tt-main-menu-content > ul > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+				});
 
-		} else {	
+		} else {
 
 			// Menu step out animations
 			$("body").addClass("tt-m-menu-toggle-no-click"); // Disable toggle button click until the animations last.
 
 			// Menu out animations
 			var tl_MenuOut = gsap.timeline({
-				onComplete: function() { 
-					$("body").removeClass("tt-m-menu-toggle-no-click"); 
+				onComplete: function () {
+					$("body").removeClass("tt-m-menu-toggle-no-click");
 				}
 			});
 
-				 tl_MenuOut.to(".tt-main-menu-content > ul > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-				 tl_MenuOut.to(".tt-main-menu", { duration: 0.4, autoAlpha: 0, clearProps:"all" }, "+=0.2");
-				 tl_MenuOut.to(".tt-main-menu-content > ul > li", { clearProps:"all" }); // clearProps only
+			tl_MenuOut.to(".tt-main-menu-content > ul > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+			tl_MenuOut.to(".tt-main-menu", { duration: 0.4, autoAlpha: 0, clearProps: "all" }, "+=0.2");
+			tl_MenuOut.to(".tt-main-menu-content > ul > li", { clearProps: "all" }); // clearProps only
 
 			// Close open submenus
 			setTimeout(function () {
@@ -790,11 +790,11 @@
 	});
 
 	// Append element if link href contains #
- 	$('.tt-submenu-trigger > a[href^="#"]').parent(".tt-submenu-trigger").append('<span class="tt-submenu-trigger-m"></span>');
+	$('.tt-submenu-trigger > a[href^="#"]').parent(".tt-submenu-trigger").append('<span class="tt-submenu-trigger-m"></span>');
 
 	// Open submenu if link href contains #
 	if ($(".tt-submenu-trigger > a").is('[href^="#"]')) {
-		$(".tt-submenu-trigger-m").on("click", function() {
+		$(".tt-submenu-trigger-m").on("click", function () {
 			var $this = $(this).parent();
 			if ($this.hasClass("tt-m-submenu-open")) {
 				$this.removeClass("tt-m-submenu-open");
@@ -810,7 +810,7 @@
 
 	// Open submenu on caret click
 	$(".tt-submenu-trigger").append('<span class="tt-m-caret"></span>');
-	$(".tt-m-caret").on("click", function() {
+	$(".tt-m-caret").on("click", function () {
 		var $this = $(this).parent();
 		if ($this.hasClass("tt-m-submenu-open")) {
 			$this.removeClass("tt-m-submenu-open");
@@ -837,8 +837,8 @@
 	// On menu toggle button click
 	// ============================
 	var $olMenuToggleBtn = $(".tt-ol-menu-toggle-btn-text, .tt-ol-menu-toggle-btn");
-	
-	$olMenuToggleBtn.on("click", function() {
+
+	$olMenuToggleBtn.on("click", function () {
 		$("html").toggleClass("tt-no-scroll");
 		$("body").toggleClass("tt-ol-menu-open").addClass("tt-ol-menu-active");
 		if ($("body").hasClass("tt-ol-menu-open")) {
@@ -847,39 +847,39 @@
 			$("body").addClass("olm-toggle-no-click"); // Disable toggle button click until the animations last.
 
 			var tl_olMenuIn = gsap.timeline({
-				onComplete: function() { 
-					$("body").removeClass("olm-toggle-no-click"); 
+				onComplete: function () {
+					$("body").removeClass("olm-toggle-no-click");
 				}
 			});
 
-				 tl_olMenuIn.to(".tt-overlay-menu", { duration: 0.4, autoAlpha: 1 });
-				 tl_olMenuIn.from(".tt-ol-menu-list > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps:"all" });
-				 if ($(".tt-ol-menu-social").length) {
-				 	tl_olMenuIn.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 1 }, "-=0.4");
-				 	tl_olMenuIn.from(".tt-ol-menu-social > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps:"all" }, "-=0.4");
-				 }
-				 if ($(".tt-ol-menu-ghost").length) {
-				 	tl_olMenuIn.from(".tt-ol-menu-ghost", { duration: 0.4, y: 80, autoAlpha: 0, ease: Power2.easeOut, clearProps:"all" }, "-=0.4");
-				 }
+			tl_olMenuIn.to(".tt-overlay-menu", { duration: 0.4, autoAlpha: 1 });
+			tl_olMenuIn.from(".tt-ol-menu-list > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps: "all" });
+			if ($(".tt-ol-menu-social").length) {
+				tl_olMenuIn.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 1 }, "-=0.4");
+				tl_olMenuIn.from(".tt-ol-menu-social > li", { duration: 0.4, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps: "all" }, "-=0.4");
+			}
+			if ($(".tt-ol-menu-ghost").length) {
+				tl_olMenuIn.from(".tt-ol-menu-ghost", { duration: 0.4, y: 80, autoAlpha: 0, ease: Power2.easeOut, clearProps: "all" }, "-=0.4");
+			}
 
 			// On menu link click
 			$(".tt-overlay-menu a, .tt-logo a")
-			.not('[target="_blank"]') // omit from selection
-			.not('[href^="#"]') // omit from selection
-			.not('[href^="mailto"]') // omit from selection
-			.not('[href^="tel"]') // omit from selection
-			.on('click', function() {
-				gsap.set("#content-wrap, .ttgr-cat-nav", { autoAlpha: 0 }); // Hide before timeline
-				var tl_olMenuClick = gsap.timeline();
-					 tl_olMenuClick.to(".tt-ol-menu-list > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-					 if ($(".tt-ol-menu-social").length) {
-					 	tl_olMenuClick.to(".tt-ol-menu-social > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn }, "-=0.4");
-					 	tl_olMenuClick.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 0 }, "-=0.4");
-					 }
-					 if ($(".tt-ol-menu-ghost").length) {
-					 	tl_olMenuClick.to(".tt-ol-menu-ghost", { duration: 0.4, y: -40, autoAlpha: 0, ease:Power2.easeIn }, "-=0.4");
-					 }
-			});
+				.not('[target="_blank"]') // omit from selection
+				.not('[href^="#"]') // omit from selection
+				.not('[href^="mailto"]') // omit from selection
+				.not('[href^="tel"]') // omit from selection
+				.on('click', function () {
+					gsap.set("#content-wrap, .ttgr-cat-nav", { autoAlpha: 0 }); // Hide before timeline
+					var tl_olMenuClick = gsap.timeline();
+					tl_olMenuClick.to(".tt-ol-menu-list > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+					if ($(".tt-ol-menu-social").length) {
+						tl_olMenuClick.to(".tt-ol-menu-social > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn }, "-=0.4");
+						tl_olMenuClick.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 0 }, "-=0.4");
+					}
+					if ($(".tt-ol-menu-ghost").length) {
+						tl_olMenuClick.to(".tt-ol-menu-ghost", { duration: 0.4, y: -40, autoAlpha: 0, ease: Power2.easeIn }, "-=0.4");
+					}
+				});
 
 			// Hide sliding sidebar
 			if ($(".tt-sliding-sidebar-wrap").length) {
@@ -907,35 +907,35 @@
 				};
 				ttOlMenuSocialResize();
 
-				$(window).resize(function() {
+				$(window).resize(function () {
 					ttOlMenuSocialResize();
 				});
 			}
 
-		} else {	
+		} else {
 
 			// Menu step out animations
 			$("body").addClass("olm-toggle-no-click"); // Disable toggle button click until the animations last.
 
 			var tl_olMenuOut = gsap.timeline({
-				onComplete: function() { 
-					$("body").removeClass("olm-toggle-no-click"); 
+				onComplete: function () {
+					$("body").removeClass("olm-toggle-no-click");
 				}
 			});
-				 tl_olMenuOut.to(".tt-ol-menu-list > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-				 if ($(".tt-ol-menu-social").length) {
-				 	tl_olMenuOut.to(".tt-ol-menu-social > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn }, "-=0.4");
-				 	tl_olMenuOut.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 0, clearProps:"all" }, "-=0.4");
-				 }
-				 if ($(".tt-ol-menu-ghost").length) {
-				 	tl_olMenuOut.to(".tt-ol-menu-ghost", { duration: 0.4, y: -60, autoAlpha: 0, ease:Power2.easeIn }, "-=0.4");
-				 }
-				 tl_olMenuOut.to(".tt-overlay-menu", { duration: 0.4, autoAlpha: 0, clearProps:"all" }, "+=0.2");
-				 tl_olMenuOut.set(".tt-ol-menu-list > li, .tt-ol-menu-social > li, .tt-ol-menu-ghost", { clearProps:"all" }); // clearProps only
+			tl_olMenuOut.to(".tt-ol-menu-list > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+			if ($(".tt-ol-menu-social").length) {
+				tl_olMenuOut.to(".tt-ol-menu-social > li", { duration: 0.4, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn }, "-=0.4");
+				tl_olMenuOut.to(".tt-ol-menu-social", { duration: 0.4, autoAlpha: 0, clearProps: "all" }, "-=0.4");
+			}
+			if ($(".tt-ol-menu-ghost").length) {
+				tl_olMenuOut.to(".tt-ol-menu-ghost", { duration: 0.4, y: -60, autoAlpha: 0, ease: Power2.easeIn }, "-=0.4");
+			}
+			tl_olMenuOut.to(".tt-overlay-menu", { duration: 0.4, autoAlpha: 0, clearProps: "all" }, "+=0.2");
+			tl_olMenuOut.set(".tt-ol-menu-list > li, .tt-ol-menu-social > li, .tt-ol-menu-ghost", { clearProps: "all" }); // clearProps only
 
 			// Show sliding sidebar
 			if ($(".tt-sliding-sidebar-wrap").length) {
-				gsap.to(".tt-sliding-sidebar-trigger", { duration: 1, autoAlpha: 1, ease: Expo.easeOut, clearProps:"all" }, "-=0.3");
+				gsap.to(".tt-sliding-sidebar-trigger", { duration: 1, autoAlpha: 1, ease: Expo.easeOut, clearProps: "all" }, "-=0.3");
 			}
 
 			// Close open submenus
@@ -958,19 +958,19 @@
 
 			}, 900);
 		}
-		
+
 		return false;
 	});
 
 	// Menu list hover
-	$(".tt-ol-menu-list").on("mouseenter", function() {
+	$(".tt-ol-menu-list").on("mouseenter", function () {
 		$(this).addClass("tt-ol-menu-hover");
-	}).on("mouseleave", function() {
+	}).on("mouseleave", function () {
 		$(this).removeClass("tt-ol-menu-hover");
 	});
 
 	// Open submenu if link href contains #
-	$(".tt-ol-submenu-trigger > a").on("click", function() {
+	$(".tt-ol-submenu-trigger > a").on("click", function () {
 		if ($(this).is('[href^="#"]')) {
 			var $this = $(this).parent();
 			if ($this.hasClass("tt-ol-submenu-open")) {
@@ -987,7 +987,7 @@
 	});
 
 	// Open submenu on caret click
-	$(".tt-ol-submenu-caret-wrap").on("click", function() {
+	$(".tt-ol-submenu-caret-wrap").on("click", function () {
 		var $this = $(this).parent();
 		if ($this.hasClass("tt-ol-submenu-open")) {
 			$this.removeClass("tt-ol-submenu-open");
@@ -1010,7 +1010,7 @@
 	if ($(".tt-portfolio-slider").length) {
 		$("body").addClass("tt-portfolio-slider-on");
 
-		$(".tt-portfolio-slider").each(function() {
+		$(".tt-portfolio-slider").each(function () {
 			var $ttPortfolioSlider = $(this);
 
 			// Data attributes
@@ -1019,7 +1019,7 @@
 			var $dataKeyboard = $ttPortfolioSlider.data("keyboard");
 			var $dataSimulateTouch = $ttPortfolioSlider.data("simulate-touch");
 			var $dataGrabCursor = $ttPortfolioSlider.data("grab-cursor");
-			var $dataAutoplay = $ttPortfolioSlider.data("autoplay") ? { delay: $ttPortfolioSlider.data("autoplay"),} : $ttPortfolioSlider.data("autoplay");
+			var $dataAutoplay = $ttPortfolioSlider.data("autoplay") ? { delay: $ttPortfolioSlider.data("autoplay"), } : $ttPortfolioSlider.data("autoplay");
 			var $dataLoop = $ttPortfolioSlider.data("loop") ? { loopedSlides: 100, } : $ttPortfolioSlider.data("loop"); // Not recommended!
 
 			if ($ttPortfolioSlider.is("[data-speed]")) {
@@ -1036,7 +1036,7 @@
 
 			// Init Swiper
 			// =============
-			var $ttPortfolioSliderSwiper = new Swiper ($ttPortfolioSlider.find(".swiper")[0], {
+			var $ttPortfolioSliderSwiper = new Swiper($ttPortfolioSlider.find(".swiper")[0], {
 				// Parameters
 				direction: "horizontal",
 				effect: "slide",
@@ -1090,9 +1090,9 @@
 						var $slideActive = $($this.slides[$this.activeIndex]);
 
 						// Play video on load
-						$slideActive.find("video").each(function() {
+						$slideActive.find("video").each(function () {
 							$(this).get(0).play();
-						}); 
+						});
 
 						// Portfolio slider caption on load
 						// ---------------------------------
@@ -1114,7 +1114,7 @@
 						var $slideActive = $($this.slides[$this.activeIndex]);
 
 						// If slider image is light
-						setTimeout(function(){
+						setTimeout(function () {
 							if ($slideActive.hasClass("psi-image-is-light")) {
 								$("body").addClass("tt-light-bg-on psi-light-bg-on");
 							} else {
@@ -1123,9 +1123,9 @@
 						}, 400);
 
 						// Play video
-						$slideActive.find("video").each(function() {
+						$slideActive.find("video").each(function () {
 							$(this).get(0).play();
-						}); 
+						});
 					},
 
 					transitionEnd: function () {
@@ -1134,10 +1134,10 @@
 						var $slideActive = $($this.slides[$this.activeIndex]);
 
 						// Pause video
-						$slideActive.prevAll().find("video").each(function() {
+						$slideActive.prevAll().find("video").each(function () {
 							$(this).get(0).pause();
 						});
-						$slideActive.nextAll().find("video").each(function() {
+						$slideActive.nextAll().find("video").each(function () {
 							$(this).get(0).pause();
 						});
 
@@ -1182,11 +1182,11 @@
 
 			// Parallax effect on mouse move (no effect on mobile devices!)
 			// ------------------------------
-			if(!isMobile) {
+			if (!isMobile) {
 				if ($ttPortfolioSlider.data("parallax-mouse-move")) {
 					gsap.set($ttPortfolioSlider.find(".tt-psi-image"), { scale: 1.05 });
 
-					$ttPortfolioSlider.mousemove(function(e) {
+					$ttPortfolioSlider.mousemove(function (e) {
 						parallaxIt(e, $ttPortfolioSlider.find(".tt-psi-image"), -25); // Parallax element
 						parallaxIt(e, $ttPortfolioSlider.find(".tt-ps-caption-inner"), -35); // Parallax element
 					});
@@ -1216,7 +1216,7 @@
 	// =======================================================================================
 
 	if ($(".tt-portfolio-carousel").length) {
-		$(".tt-portfolio-carousel").each(function() {
+		$(".tt-portfolio-carousel").each(function () {
 			var $ttPortfolioCarousel = $(this);
 
 			// Data attributes
@@ -1225,7 +1225,7 @@
 			var $dataKeyboard = $ttPortfolioCarousel.data("keyboard");
 			var $dataSimulateTouch = $ttPortfolioCarousel.data("simulate-touch");
 			var $dataGrabCursor = $ttPortfolioCarousel.data("grab-cursor");
-			var $dataAutoplay = $ttPortfolioCarousel.data("autoplay") ? { delay: $ttPortfolioCarousel.data("autoplay"),} : $ttPortfolioCarousel.data("autoplay");
+			var $dataAutoplay = $ttPortfolioCarousel.data("autoplay") ? { delay: $ttPortfolioCarousel.data("autoplay"), } : $ttPortfolioCarousel.data("autoplay");
 			var $dataLoop = $ttPortfolioCarousel.data("loop") ? { loopedSlides: 100, } : $ttPortfolioCarousel.data("loop"); // Not recommended!
 
 			if ($ttPortfolioCarousel.is("[data-speed]")) {
@@ -1242,7 +1242,7 @@
 
 			// Init Swiper
 			// =============
-			var $ttPortfolioCarouselSwiper = new Swiper ($ttPortfolioCarousel.find(".swiper")[0], {
+			var $ttPortfolioCarouselSwiper = new Swiper($ttPortfolioCarousel.find(".swiper")[0], {
 				// Parameters
 				direction: "horizontal",
 				slidesPerView: "auto",
@@ -1327,9 +1327,9 @@
 						$slideActive.nextAll().addClass("tt-pcs-disabled");
 
 						// Play video
-						$(".swiper-slide-active").find("video").each(function() {
+						$(".swiper-slide-active").find("video").each(function () {
 							$(this).get(0).play();
-						}); 
+						});
 
 						// Disable nav arrow action.
 						$(".tt-pc-arrow").addClass("tt-pc-arrow-disabled");
@@ -1348,11 +1348,11 @@
 						$slideActive.next().removeClass("tt-slide-active-start"); // Remove class if active slide transition ends.
 
 						// Pause video
-						$(".swiper-slide-prev").find("video").each(function() {
+						$(".swiper-slide-prev").find("video").each(function () {
 							$(this).get(0).pause();
 						});
-						
-						$(".swiper-slide-next").find("video").each(function() {
+
+						$(".swiper-slide-next").find("video").each(function () {
 							$(this).get(0).pause();
 						});
 
@@ -1366,25 +1366,25 @@
 			// Scale down animation on carousel click
 			if ($ttPortfolioCarousel.attr("data-simulate-touch") == "true") {
 				if ($ttPortfolioCarousel.hasClass("pc-scale-down")) {
-					$ttPortfolioCarousel.find(".swiper").on("mousedown touchstart pointerdown", function(e) {
+					$ttPortfolioCarousel.find(".swiper").on("mousedown touchstart pointerdown", function (e) {
 						if (e.which === 1) { // Affects the left mouse button only!
 							gsap.to($ttPortfolioCarousel.find(".tt-pci-inner"), { duration: 0.7, scale: 0.9 });
 						}
 					});
-					$("body").on("mouseup touchend pointerup mouseleave", function() {	
+					$("body").on("mouseup touchend pointerup mouseleave", function () {
 						gsap.to($ttPortfolioCarousel.find(".tt-pci-inner"), { duration: 0.7, scale: 1, clearProps: "scale" });
 					});
 				}
 			}
 
 			// Update slider when windows resize or orientation change 
-			$(window).on("resize orientationchange", function() {
-				setTimeout(function(){
+			$(window).on("resize orientationchange", function () {
+				setTimeout(function () {
 					$ttPortfolioCarouselSwiper.update();
 					$ttPortfolioCarousel.find(".swiper-wrapper").addClass("swtr-smooth");
 				}, $dataSpeed);
 
-				setTimeout(function(){
+				setTimeout(function () {
 					$ttPortfolioCarousel.find(".swiper-wrapper").removeClass("swtr-smooth");
 				}, $dataSpeed + $dataSpeed);
 			});
@@ -1399,7 +1399,7 @@
 	// =======================================================================================
 
 	if ($(".tt-blog-carousel").length) {
-		$(".tt-blog-carousel").each(function() {
+		$(".tt-blog-carousel").each(function () {
 			var $ttBlogCarousel = $(this);
 
 			// Data attributes
@@ -1496,7 +1496,7 @@
 	// =======================================================================================
 
 	if ($(".tt-content-carousel").length) {
-		$(".tt-content-carousel").each(function() {
+		$(".tt-content-carousel").each(function () {
 			var $ttContentCarousel = $(this);
 
 			// Data attributes
@@ -1564,20 +1564,20 @@
 					transitionStart: function () {
 
 						// Play video
-						$(".swiper-slide-active").find("video").each(function() {
+						$(".swiper-slide-active").find("video").each(function () {
 							$(this).get(0).play();
-						}); 
+						});
 
 					},
 
 					transitionEnd: function () {
 
 						// Pause video
-						$(".swiper-slide-prev").find("video").each(function() {
+						$(".swiper-slide-prev").find("video").each(function () {
 							$(this).get(0).pause();
 						});
-						
-						$(".swiper-slide-next").find("video").each(function() {
+
+						$(".swiper-slide-next").find("video").each(function () {
 							$(this).get(0).pause();
 						});
 
@@ -1589,12 +1589,12 @@
 			// =======================================
 			if ($ttContentCarousel.attr("data-simulate-touch") == "true") {
 				if ($ttContentCarousel.hasClass("cc-scale-down")) {
-					$ttContentCarousel.find(".swiper-wrapper").on("mousedown touchstart pointerdown", function(e) {
+					$ttContentCarousel.find(".swiper-wrapper").on("mousedown touchstart pointerdown", function (e) {
 						if (e.which === 1) { // Affects the left mouse button only!
 							gsap.to($ttContentCarousel.find(".tt-content-carousel-item"), { duration: 0.7, scale: 0.9 });
 						}
 					});
-					$("body").on("mouseup touchend pointerup mouseleave", function() {	
+					$("body").on("mouseup touchend pointerup mouseleave", function () {
 						gsap.to($ttContentCarousel.find(".tt-content-carousel-item"), { duration: 0.7, scale: 1, clearProps: "scale" });
 					});
 				}
@@ -1612,7 +1612,7 @@
 	// =======================================================================================
 
 	if ($(".tt-testimonials-slider").length) {
-		$(".tt-testimonials-slider").each(function() {
+		$(".tt-testimonials-slider").each(function () {
 			var $ttTestimonialsSlider = $(this);
 
 			// Data attributes
@@ -1629,7 +1629,7 @@
 
 			// Init Swiper
 			// =============
-			var $ttTestimonialsSliderSwiper = new Swiper ($ttTestimonialsSlider.find(".swiper")[0], {
+			var $ttTestimonialsSliderSwiper = new Swiper($ttTestimonialsSlider.find(".swiper")[0], {
 				// Parameters
 				direction: "horizontal",
 				slidesPerView: "auto",
@@ -1664,18 +1664,18 @@
 			});
 
 			// Auto height fix
-			setTimeout(function() {
+			setTimeout(function () {
 				$ttTestimonialsSliderSwiper.updateAutoHeight();
 			}, 100);
 
 			// Scale down animation on slider click
 			if ($ttTestimonialsSlider.hasClass("ts-scale-down")) {
-				$ttTestimonialsSlider.find(".swiper-wrapper").on("mousedown touchstart pointerdown", function(e) {
+				$ttTestimonialsSlider.find(".swiper-wrapper").on("mousedown touchstart pointerdown", function (e) {
 					if (e.which === 1) { // Affects the left mouse button only!
 						gsap.to($ttTestimonialsSlider.find(".tt-ts-item-inner"), { duration: 0.7, scale: 0.9 });
 					}
 				});
-				$("body").on("mouseup touchend pointerup", function() {	
+				$("body").on("mouseup touchend pointerup", function () {
 					gsap.to($ttTestimonialsSlider.find(".tt-ts-item-inner"), { duration: 0.7, scale: 1, clearProps: "scale" });
 				});
 			}
@@ -1685,14 +1685,14 @@
 
 
 	// ============================================================================
-   // Isotope
-   // More info: http://isotope.metafizzy.co
-   // Note: "imagesloaded" blugin is required! https://imagesloaded.desandro.com/
-   // ============================================================================
+	// Isotope
+	// More info: http://isotope.metafizzy.co
+	// Note: "imagesloaded" blugin is required! https://imagesloaded.desandro.com/
+	// ============================================================================
 
 	// init Isotope
 	var $container = $(".isotope-items-wrap");
-	$container.imagesLoaded(function() {
+	$container.imagesLoaded(function () {
 		$container.isotope({
 			itemSelector: ".isotope-item",
 			layoutMode: "packery",
@@ -1700,21 +1700,21 @@
 			percentPosition: true
 		});
 
-		setTimeout(function() {
+		setTimeout(function () {
 			$container.isotope('layout'); // Refresh Isotope
 			ScrollTrigger.refresh(true); // Refresh ScrollTrigger
 		}, 500);
 	});
 
 	// Filter
-	$(".ttgr-cat-list > li > a").on("click", function() {
+	$(".ttgr-cat-list > li > a").on("click", function () {
 		var selector = $(this).attr("data-filter");
 		$container.isotope({
 			filter: selector
 		});
 
 		// Refresh ScrollTrigger
-		setTimeout(function() {
+		setTimeout(function () {
 			ScrollTrigger.refresh(true);
 		}, 500);
 
@@ -1723,9 +1723,9 @@
 
 	// Filter item active
 	var filterItemActive = $(".ttgr-cat-list > li > a");
-	filterItemActive.on("click", function(){
+	filterItemActive.on("click", function () {
 		var $this = $(this);
-		if ( !$this.hasClass("active")) {
+		if (!$this.hasClass("active")) {
 			filterItemActive.removeClass("active");
 			$this.addClass("active");
 		}
@@ -1803,10 +1803,10 @@
 		loadVimeoThumbnail: true, // You can automatically load thumbnails for vimeo videos from vimeo by setting loadYoutubeThumbnail true.
 		vimeoThumbSize: 'thumbnail_medium', // Thumbnail size for vimeo videos: 'thumbnail_large' or 'thumbnail_medium' or 'thumbnail_small'.
 		vimeoPlayerParams: { // Change vimeo player parameters: https://developer.vimeo.com/player/embedding#universal-parameters 
-			byline : 1,
-			portrait : 1,
+			byline: 1,
+			portrait: 1,
 			title: 1,
-			color : 'CCCCCC',
+			color: 'CCCCCC',
 			autopause: 1
 		},
 
@@ -1819,14 +1819,14 @@
 
 		// Share plugin
 		share: false, // Enable/Disable share plugin.
-			facebook: true, // Enable Facebook share.
-			facebookDropdownText: 'Facebook', // Facebok dropdown text.
-			twitter: true, // Enable Twitter share.
-			twitterDropdownText: 'Twitter', // Twitter dropdown text.
-			googlePlus: true, // Enable Google Plus share.
-			googlePlusDropdownText: 'Google+', // Google Plus dropdown text.
-			pinterest: true, // Enable Pinterest share.
-			pinterestDropdownText: 'Pinterest' // Pinterest dropdown text.
+		facebook: true, // Enable Facebook share.
+		facebookDropdownText: 'Facebook', // Facebok dropdown text.
+		twitter: true, // Enable Twitter share.
+		twitterDropdownText: 'Twitter', // Twitter dropdown text.
+		googlePlus: true, // Enable Google Plus share.
+		googlePlusDropdownText: 'Google+', // Google Plus dropdown text.
+		pinterest: true, // Enable Pinterest share.
+		pinterestDropdownText: 'Pinterest' // Pinterest dropdown text.
 
 	});
 
@@ -1867,9 +1867,9 @@
 	// =========================================
 	if ($("#page-header").is(".ph-bg-image.ph-bg-image-is-light")) {
 
-		$(".ph-bg-image-is-light").on("mouseenter mouseover", function() {
+		$(".ph-bg-image-is-light").on("mouseenter mouseover", function () {
 			$("body").addClass("tt-light-bg-hover");
-		}).on("mouseleave", function() {
+		}).on("mouseleave", function () {
 			$("body").removeClass("tt-light-bg-hover");
 		});
 
@@ -1895,11 +1895,11 @@
 	// Page header elements scrolling effects
 	// =======================================
 	if ($("#page-header").hasClass("ph-content-parallax")) {
-		let tlPhParallax = gsap.timeline({ 
+		let tlPhParallax = gsap.timeline({
 			scrollTrigger: {
-				trigger: "#page-header", 
-				start: 'top top', 
-				end: 'bottom top', 
+				trigger: "#page-header",
+				start: 'top top',
+				end: 'bottom top',
 				scrub: true,
 				markers: false
 			}
@@ -1963,7 +1963,7 @@
 
 		// Page header scroll down circle
 		if ($(".tt-scroll-down").length) {
-			gsap.to(".tt-scroll-down", { 
+			gsap.to(".tt-scroll-down", {
 				// y: 100,
 				autoAlpha: 0,
 				ease: "none",
@@ -1973,13 +1973,13 @@
 					end: "30% top",
 					scrub: true,
 					markers: false
-				}, 
+				},
 			});
 		}
 
 		// Page header projekt share
 		if ($(".ph-share").length) {
-			gsap.to(".ph-share-inner", { 
+			gsap.to(".ph-share-inner", {
 				// y: 100,
 				autoAlpha: 0,
 				ease: "none",
@@ -1989,7 +1989,7 @@
 					end: "30% top",
 					scrub: true,
 					markers: false
-				}, 
+				},
 			});
 		}
 	}
@@ -2065,16 +2065,16 @@
 			});
 
 			function ttgCatShow() {
-				gsap.to($ttgCatTriggerWrap, { duration: 0.4, autoAlpha: 1, scale: 1, ease:Power2.easeOut });
+				gsap.to($ttgCatTriggerWrap, { duration: 0.4, autoAlpha: 1, scale: 1, ease: Power2.easeOut });
 			}
 			function ttgCatHide() {
-				gsap.to($ttgCatTriggerWrap, { duration: 0.4, autoAlpha: 0, scale: 0.9, ease:Power2.easeOut });
+				gsap.to($ttgCatTriggerWrap, { duration: 0.4, autoAlpha: 0, scale: 0.9, ease: Power2.easeOut });
 			}
 
 		} else {
 
 			// Hide trigger before it reaches the top when page scroll
-			gsap.to($ttgCatTriggerWrap, { 
+			gsap.to($ttgCatTriggerWrap, {
 				yPercent: 70,
 				autoAlpha: 0,
 				ease: "none",
@@ -2084,7 +2084,7 @@
 					end: "100px 250px",
 					scrub: true,
 					markers: false
-				}, 
+				},
 			});
 
 		}
@@ -2093,7 +2093,7 @@
 
 	// Portfolio list item elements scrolling effects
 	// ===============================================
-	$(".pli-caption").each(function() {
+	$(".pli-caption").each(function () {
 		var $pliTitle = $(this).find(".pli-title");
 		var $pliCategory = $(this).find(".pli-categories-wrap");
 		var $pliCounter = $(this).parents(".portfolio-list-item").find(".pli-counter");
@@ -2107,33 +2107,33 @@
 		});
 
 		ScrollTrigger.matchMedia({
-			"(min-width: 768px)": function() {
+			"(min-width: 768px)": function () {
 				if ($($pliTitle).length) {
-					tl_plIInfo.fromTo($pliTitle, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps:"all" }, "+=0.3");
+					tl_plIInfo.fromTo($pliTitle, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps: "all" }, "+=0.3");
 				}
 				if ($($pliCategory).length) {
-					tl_plIInfo.fromTo($pliCategory, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps:"all" }, "-=1.7");
+					tl_plIInfo.fromTo($pliCategory, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps: "all" }, "-=1.7");
 				}
 				if ($($pliCounter).length) {
-					tl_plIInfo.fromTo($pliCounter, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps:"all" }, "-=1.8");
+					tl_plIInfo.fromTo($pliCounter, { autoAlpha: 0, x: 60, scaleX: 1.3, transformOrigin: "left" }, { duration: 2, autoAlpha: 1, x: 0, scaleX: 1, transformOrigin: "left", ease: Expo.easeOut, clearProps: "all" }, "-=1.8");
 				}
 			},
 
-			"(max-width: 767px)": function() {
+			"(max-width: 767px)": function () {
 				if ($($pliTitle).length) {
-					tl_plIInfo.from($pliTitle, { duration: 2, autoAlpha: 0, y: 40, ease: Expo.easeOut, clearProps:"all" }, "+=0.5");
+					tl_plIInfo.from($pliTitle, { duration: 2, autoAlpha: 0, y: 40, ease: Expo.easeOut, clearProps: "all" }, "+=0.5");
 				}
 				if ($($pliCategory).length) {
-					tl_plIInfo.from($pliCategory, { duration: 2, autoAlpha: 0, y: 20, ease: Expo.easeOut, clearProps:"all" }, "-=1.7");
+					tl_plIInfo.from($pliCategory, { duration: 2, autoAlpha: 0, y: 20, ease: Expo.easeOut, clearProps: "all" }, "-=1.7");
 				}
 			}
 		});
 	});
-	
+
 
 	// Image parallax
 	// ===============
-	$(".anim-image-parallax").each(function() {
+	$(".anim-image-parallax").each(function () {
 
 		// Add wrap <div>.
 		$(this).wrap('<div class="anim-image-parallax-wrap"><div class="anim-image-parallax-inner"></div></div>');
@@ -2169,16 +2169,16 @@
 				markers: false,
 			}
 		});
-		tl_aipZoomIn.from($aipInner, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps:"all" });
-		
+		tl_aipZoomIn.from($aipInner, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps: "all" });
+
 	});
 
 
 	// tt-Grid "layout-creative" parallax
 	// ===================================
 	ScrollTrigger.matchMedia({
-		"(min-width: 768px)": function() {
-			$(".tt-grid.ttgr-layout-creative-1 .tt-grid-item:nth-of-type(6n+2) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-1 .tt-grid-item:nth-of-type(6n+4) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-2 .tt-grid-item:nth-of-type(4n+2) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-2 .tt-grid-item:nth-of-type(4n+3) .ttgr-item-inner").each(function() {
+		"(min-width: 768px)": function () {
+			$(".tt-grid.ttgr-layout-creative-1 .tt-grid-item:nth-of-type(6n+2) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-1 .tt-grid-item:nth-of-type(6n+4) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-2 .tt-grid-item:nth-of-type(4n+2) .ttgr-item-inner, .tt-grid.ttgr-layout-creative-2 .tt-grid-item:nth-of-type(4n+3) .ttgr-item-inner").each(function () {
 				var $this = $(this);
 
 				gsap.to($this, {
@@ -2191,7 +2191,7 @@
 						scrub: true,
 						markers: false,
 						onEnter: () => ttgrItemParalRefresh(),
-					}, 
+					},
 				});
 
 				// Refresh start/end positions on enter.
@@ -2217,7 +2217,7 @@
 				end: "bottom bottom",
 				scrub: true,
 				markers: false,
-			}, 
+			},
 		});
 
 		if ($(".tt-np-caption").length) {
@@ -2233,7 +2233,7 @@
 					end: "bottom bottom",
 					scrub: true,
 					markers: false,
-				}, 
+				},
 			});
 		}
 
@@ -2251,7 +2251,7 @@
 					end: "bottom bottom",
 					scrub: true,
 					markers: false,
-				}, 
+				},
 			});
 		}
 	}
@@ -2302,9 +2302,9 @@
 		};
 
 		// Hover
-		$(".tt-next-project").on("mouseenter mouseover", function() {
+		$(".tt-next-project").on("mouseenter mouseover", function () {
 			$("body").addClass("tt-light-bg-hover");
-		}).on("mouseleave", function() {
+		}).on("mouseleave", function () {
 			$("body").removeClass("tt-light-bg-hover");
 		});
 
@@ -2313,7 +2313,7 @@
 
 	// Skew on scroll (https://codepen.io/GreenSock/pen/eYpGLYL)
 	// ===============
-	if(!isMobile) { // Not for mobile devices!
+	if (!isMobile) { // Not for mobile devices!
 
 		var skewElement = $(".skew-on-scroll"); // Skew element class.
 		var skewMaxAngle = 7; // Max angle.
@@ -2321,9 +2321,9 @@
 		var skewDuration = 0.5; // Duration.
 
 		var proxy = { skew: 0 },
-			 skewSetter = gsap.quickSetter(skewElement, "skewY", "deg"),
-			 clamp = gsap.utils.clamp(-skewMaxAngle, skewMaxAngle);
-		
+			skewSetter = gsap.quickSetter(skewElement, "skewY", "deg"),
+			clamp = gsap.utils.clamp(-skewMaxAngle, skewMaxAngle);
+
 		if (skewElement.length) {
 
 			function skewer() {
@@ -2332,7 +2332,7 @@
 						var skew = clamp(self.getVelocity() / -skewVelocity);
 						if (Math.abs(skew) > Math.abs(proxy.skew)) {
 							proxy.skew = skew;
-							gsap.to(proxy, {skew: 0, duration: skewDuration, ease: "power1.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+							gsap.to(proxy, { skew: 0, duration: skewDuration, ease: "power1.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew) });
 						}
 					}
 				});
@@ -2346,7 +2346,7 @@
 						if (arguments.length) {
 							bodyScrollBar.scrollTop = value;
 						}
-						return bodyScrollBar.scrollTop; 
+						return bodyScrollBar.scrollTop;
 					}
 				});
 
@@ -2356,23 +2356,23 @@
 						var skew = clamp(self.getVelocity() / -skewVelocity);
 						if (Math.abs(skew) > Math.abs(proxy.skew)) {
 							proxy.skew = skew;
-							gsap.to(proxy, {skew: 0, duration: skewDuration, ease: "power1.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+							gsap.to(proxy, { skew: 0, duration: skewDuration, ease: "power1.easeInOut", overwrite: true, onUpdate: () => skewSetter(proxy.skew) });
 						}
 					}
 				});
 			}
 
 			if ($("body").hasClass("tt-smooth-scroll")) {
-				if(isMobile) {
+				if (isMobile) {
 					skewer();
 				} else {
 					skewerIfSmoothScroll();
-				} 
+				}
 			} else {
 				skewer();
 			}
 
-			gsap.set(skewElement, {transformOrigin: "center center", force3D: true}); // Change transform origin if needed.
+			gsap.set(skewElement, { transformOrigin: "center center", force3D: true }); // Change transform origin if needed.
 		}
 
 	}
@@ -2381,7 +2381,7 @@
 	// Scrolling button
 	// =================
 	if ($(".tt-scrolling-btn").length) {
-		$(".tt-scrolling-btn").each(function() {
+		$(".tt-scrolling-btn").each(function () {
 			var $this = $(this);
 			var $scrBtnSvg = $this.find(".scr-btn-spinner");
 			gsap.from($scrBtnSvg, {
@@ -2393,7 +2393,7 @@
 					end: "120% top",
 					scrub: true,
 					markers: false,
-				}, 
+				},
 			});
 		});
 	}
@@ -2403,7 +2403,7 @@
 	// =================
 
 	// zoom in
-	$(".anim-zoomin").each(function() {
+	$(".anim-zoomin").each(function () {
 
 		// Add wrap <div>.
 		$(this).wrap('<div class="anim-zoomin-wrap"></div>');
@@ -2422,7 +2422,7 @@
 				onEnter: () => animZoomInRefresh(),
 			}
 		});
-		tl_ZoomIn.from($this, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps:"all" });
+		tl_ZoomIn.from($this, { duration: 1.5, autoAlpha: 0, scale: 1.2, ease: Power2.easeOut, clearProps: "all" });
 
 		// Refresh start/end positions on enter.
 		function animZoomInRefresh() {
@@ -2432,7 +2432,7 @@
 
 
 	// fade in-up
-	$(".anim-fadeinup").each(function() {
+	$(".anim-fadeinup").each(function () {
 		let tl_FadeInUp = gsap.timeline({
 			scrollTrigger: {
 				trigger: this,
@@ -2441,12 +2441,12 @@
 			}
 		});
 
-		tl_FadeInUp.from(this, { duration: 2.5, autoAlpha: 0, y: 100, ease: Expo.easeOut, clearProps:"all" }, "+=0.3");
+		tl_FadeInUp.from(this, { duration: 2.5, autoAlpha: 0, y: 100, ease: Expo.easeOut, clearProps: "all" }, "+=0.3");
 	});
 
 
 	// skew in-up
-	$(".anim-skewinup").each(function() {
+	$(".anim-skewinup").each(function () {
 		let tl_SkewInUp = gsap.timeline({
 			scrollTrigger: {
 				trigger: this,
@@ -2455,7 +2455,7 @@
 			}
 		});
 
-		tl_SkewInUp.from(this, { duration: 2, skewY: 5, transformOrigin: "left top", autoAlpha: 0, y: 100, ease: Expo.easeOut, clearProps:"all" }, "+=0.3");
+		tl_SkewInUp.from(this, { duration: 2, skewY: 5, transformOrigin: "left top", autoAlpha: 0, y: 100, ease: Expo.easeOut, clearProps: "all" }, "+=0.3");
 	});
 
 
@@ -2490,19 +2490,19 @@
 			};
 			moveFooter();
 
-			$(window).resize(function() {
+			$(window).resize(function () {
 				moveFooter();
 			});
 		}
-		
+
 	}
 
 
 	// Item link hover
 	// ================
-	$(".portfolio-interactive-item").each(function() {
+	$(".portfolio-interactive-item").each(function () {
 		var $piItem = $(this);
-		$piItem.find(".pi-item-title-link").on("mouseenter", function() {
+		$piItem.find(".pi-item-title-link").on("mouseenter", function () {
 
 			// hover title
 			$(this).parents(".portfolio-interactive").addClass("hovered");
@@ -2514,7 +2514,7 @@
 				$piItemVideo.get(0).play();
 			}
 
-		}).on("mouseleave", function() {
+		}).on("mouseleave", function () {
 
 			// hover title
 			$(this).parents(".portfolio-interactive").removeClass("hovered");
@@ -2531,12 +2531,12 @@
 
 	// If item image is light
 	// =======================
-	$(".pi-item-image").each(function() {
+	$(".pi-item-image").each(function () {
 		if ($(this).hasClass("pi-item-image-is-light")) {
 			$(this).parents(".portfolio-interactive-item").addClass("pi-item-light-image-on");
 		}
 	});
-	
+
 
 
 
@@ -2545,18 +2545,18 @@
 	// ================================================================
 
 	// Play video on hover
-	$(".portfolio-list-item").on("mouseenter", function() {
-		$(this).find("video").each(function() {
+	$(".portfolio-list-item").on("mouseenter", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).play();
-		}); 
-	}).on("mouseleave", function() {
-		$(this).find("video").each(function() {
+		});
+	}).on("mouseleave", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).pause();
 		});
 	});
 
 	// Item image zoom on hover
-	$(".portfolio-list-item").each(function() {
+	$(".portfolio-list-item").each(function () {
 		if ($(".portfolio-list").hasClass("pli-hover")) {
 			$(this).find(".pli-image img").wrap('<div class="pli-image-hover-zoom"></div>');
 		}
@@ -2573,7 +2573,7 @@
 	if ($("#portfolio-grid").hasClass("pgi-cap-inside")) {
 
 		// Move "pgi-caption" to inside "pgi-image-wrap".
-		$(".portfolio-grid-item").each(function() {
+		$(".portfolio-grid-item").each(function () {
 			$(this).find(".pgi-caption").appendTo($(this).find(".pgi-image-wrap"));
 		});
 
@@ -2586,12 +2586,12 @@
 
 	// Play video on hover
 	// ====================
-	$(".pgi-image-wrap").on("mouseenter", function() {
-		$(this).find("video").each(function() {
+	$(".pgi-image-wrap").on("mouseenter", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).play();
-		}); 
-	}).on("mouseleave", function() {
-		$(this).find("video").each(function() {
+		});
+	}).on("mouseleave", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).pause();
 		});
 	});
@@ -2602,7 +2602,7 @@
 	$(".ttgr-cat-nav").appendTo("#body-inner");
 
 	// On category trigger click.
-	$(".ttgr-cat-trigger").on("click", function() {
+	$(".ttgr-cat-trigger").on("click", function () {
 		$("body").addClass("ttgr-cat-nav-open");
 		if ($("body").hasClass("ttgr-cat-nav-open")) {
 
@@ -2615,37 +2615,37 @@
 			// Catecories step in animations.
 			var tl_ttgrIn = gsap.timeline({
 				// Wait until the timeline is completed then make "ttgr-cat-nav" clickable again.
-				onComplete: function() {  
+				onComplete: function () {
 					ttCatNavClose();
 				}
 			});
 			tl_ttgrIn.to(".ttgr-cat-nav", { duration: 0.3, autoAlpha: 1 });
-			tl_ttgrIn.from(".ttgr-cat-list > li", { duration: 0.3, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps:"all" });
+			tl_ttgrIn.from(".ttgr-cat-list > li", { duration: 0.3, y: 80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeOut, clearProps: "all" });
 
 			// On catecory link click
 			$(".ttgr-cat-nav a")
-			.not('[target="_blank"]') // omit from selection
-			.not('[href^="#"]') // omit from selection
-			.not('[href^="mailto"]') // omit from selection
-			.not('[href^="tel"]') // omit from selection
-			.on('click', function() {
-				gsap.to(".ttgr-cat-list > li", { duration: 0.3, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-			});
+				.not('[target="_blank"]') // omit from selection
+				.not('[href^="#"]') // omit from selection
+				.not('[href^="mailto"]') // omit from selection
+				.not('[href^="tel"]') // omit from selection
+				.on('click', function () {
+					gsap.to(".ttgr-cat-list > li", { duration: 0.3, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+				});
 		}
 	});
 
 	// On close click function
 	function ttCatNavClose() {
-		$(".ttgr-cat-nav").on("click", function() {
+		$(".ttgr-cat-nav").on("click", function () {
 			$("body").removeClass("ttgr-cat-nav-open");
 
 			// Catecories step out animations
 			var tl_ttgrClose = gsap.timeline();
-				 tl_ttgrClose.to(".ttgr-cat-list > li", { duration: 0.3, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
-				 tl_ttgrClose.to(".ttgr-cat-nav", { duration: 0.3, autoAlpha: 0, clearProps:"all" }, "+=0.2");
-				 tl_ttgrClose.to(".portfolio-grid-item", { duration: 0.3, scale: 1, clearProps:"all" }, "-=0.4");
-				 tl_ttgrClose.to(".pgi-caption, #page-header, .ttgr-cat-trigger", { duration: 0.3, autoAlpha: 1, clearProps:"all" }, "-=0.4");
-				 tl_ttgrClose.to(".ttgr-cat-list > li", { clearProps:"all" }); // clearProps only
+			tl_ttgrClose.to(".ttgr-cat-list > li", { duration: 0.3, y: -80, autoAlpha: 0, stagger: 0.05, ease: Power2.easeIn });
+			tl_ttgrClose.to(".ttgr-cat-nav", { duration: 0.3, autoAlpha: 0, clearProps: "all" }, "+=0.2");
+			tl_ttgrClose.to(".portfolio-grid-item", { duration: 0.3, scale: 1, clearProps: "all" }, "-=0.4");
+			tl_ttgrClose.to(".pgi-caption, #page-header, .ttgr-cat-trigger", { duration: 0.3, autoAlpha: 1, clearProps: "all" }, "-=0.4");
+			tl_ttgrClose.to(".ttgr-cat-list > li", { clearProps: "all" }); // clearProps only
 		});
 	}
 
@@ -2656,18 +2656,18 @@
 	// ================================================================
 
 	// Play video on hover
-	$(".tt-gallery-video-wrap").on("mouseenter", function() {
-		$(this).find("video").each(function() {
+	$(".tt-gallery-video-wrap").on("mouseenter", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).play();
-		}); 
-	}).on("mouseleave", function() {
-		$(this).find("video").each(function() {
+		});
+	}).on("mouseleave", function () {
+		$(this).find("video").each(function () {
 			$(this).get(0).pause();
 		});
 	});
 
 	// Gallery item image zoom on hover
-	$(".tt-gallery-item").each(function() {
+	$(".tt-gallery-item").each(function () {
 		if ($(".tt-gallery").hasClass("ttga-hover")) {
 			$(this).find(".tt-gallery-image img").wrap('<div class="tt-gallery-image-hover-zoom"></div>');
 		}
@@ -2679,10 +2679,10 @@
 	// Accordion
 	// ================================================================
 
-	$(".tt-accordion").each(function() {
+	$(".tt-accordion").each(function () {
 
 		// If accordion content has class "is-open"
-		$(this).find(".tt-accordion-item").each(function() {
+		$(this).find(".tt-accordion-item").each(function () {
 			var $this = $(this);
 
 			if ($this.find(".tt-accordion-content").hasClass("is-open")) {
@@ -2691,7 +2691,7 @@
 		});
 
 		// Accordion item on click
-		$(this).find(".tt-accordion-heading").on("click", function() {
+		$(this).find(".tt-accordion-heading").on("click", function () {
 			var $this = $(this);
 
 			if ($this.parents(".tt-accordion-item").hasClass("active")) {
@@ -2745,12 +2745,12 @@
 		$(".tt-sliding-sidebar-wrap").appendTo("#body-inner");
 
 		// Open/close sliding sidebar.
-		$(".tt-sliding-sidebar-trigger").on("click", function() {
+		$(".tt-sliding-sidebar-trigger").on("click", function () {
 			$("body").toggleClass("tt-sliding-sidebar-open");
-		}); 
-		$(".tt-sliding-sidebar-close").on("click", function() {
+		});
+		$(".tt-sliding-sidebar-close").on("click", function () {
 			$("body").removeClass("tt-sliding-sidebar-open");
-		}); 
+		});
 
 		// If sliding sidebar has class "tt-ss-right" add class "tt-ss-right-on" to <pody>.
 		if ($(".tt-sliding-sidebar-wrap").hasClass("tt-ss-right")) {
@@ -2766,9 +2766,9 @@
 	// ==================================
 
 	// Hover scrolling speed.
-	$(".tt-scrolling-text").each(function() {
+	$(".tt-scrolling-text").each(function () {
 		var $tt_stSpeed = $(this).data("scroll-speed");
-		$(this).find(".tt-scrolling-text-inner").css({ 
+		$(this).find(".tt-scrolling-text-inner").css({
 			"animation-duration": $tt_stSpeed + "s",
 		});
 	});
@@ -2783,36 +2783,36 @@
 	$('a[href^="#"]')
 		.not('[href$="#"]') // omit from selection
 		.not('[href$="#0"]') // omit from selection
-		.on("click", function() {
+		.on("click", function () {
 
-		var target = this.hash;
+			var target = this.hash;
 
-		// If fixed header position enabled.
-		if ($("#tt-header").hasClass("tt-header-fixed")) {
-			var $offset = $("#tt-header").height();
-		} else {
-			var $offset = 0;
-		}
+			// If fixed header position enabled.
+			if ($("#tt-header").hasClass("tt-header-fixed")) {
+				var $offset = $("#tt-header").height();
+			} else {
+				var $offset = 0;
+			}
 
-		// You can use data attribute (for example: data-offset="100") to set top offset in HTML markup if needed. 
-		if ($(this).data("offset") != undefined) $offset = $(this).data("offset");
-		
-		if(!isMobile) { // Not for mobile devices!
-			if ($("body").hasClass("tt-smooth-scroll")) {
-				var topY = $(target).offset().top - $("#scroll-container > .scroll-content").offset().top - $offset;
-				var $scrollbar = Scrollbar.init(document.getElementById("scroll-container"));
-				gsap.to($scrollbar, { duration: 1.5, scrollTo: { y: topY, autoKill: true }, ease: Expo.easeInOut });
+			// You can use data attribute (for example: data-offset="100") to set top offset in HTML markup if needed. 
+			if ($(this).data("offset") != undefined) $offset = $(this).data("offset");
 
+			if (!isMobile) { // Not for mobile devices!
+				if ($("body").hasClass("tt-smooth-scroll")) {
+					var topY = $(target).offset().top - $("#scroll-container > .scroll-content").offset().top - $offset;
+					var $scrollbar = Scrollbar.init(document.getElementById("scroll-container"));
+					gsap.to($scrollbar, { duration: 1.5, scrollTo: { y: topY, autoKill: true }, ease: Expo.easeInOut });
+
+				} else {
+					var topY = $(target).offset().top - $("body").offset().top - $offset;
+					$("html,body").animate({ scrollTop: topY }, 800);
+				}
 			} else {
 				var topY = $(target).offset().top - $("body").offset().top - $offset;
-				$("html,body").animate({scrollTop: topY}, 800);
+				$("html,body").animate({ scrollTop: topY }, 800);
 			}
-		} else {
-			var topY = $(target).offset().top - $("body").offset().top - $offset;
-			$("html,body").animate({scrollTop: topY}, 800);
-		}
-		return false;
-	});
+			return false;
+		});
 
 
 
@@ -2821,19 +2821,19 @@
 	// Requires "GSAP ScrollToPlugin" (https://greensock.com/docs/v2/Plugins/ScrollToPlugin)
 	// ================================================================
 
-	$(".scroll-to-top").on("click", function() {
-		if(!isMobile) { // Not for mobile devices!
+	$(".scroll-to-top").on("click", function () {
+		if (!isMobile) { // Not for mobile devices!
 			if ($("body").hasClass("tt-smooth-scroll")) {
 				var $scrollbar = Scrollbar.init(document.getElementById("scroll-container"));
 				gsap.to($scrollbar, { duration: 1.5, scrollTo: { y: 0, autoKill: true }, ease: Expo.easeInOut });
 			} else {
-				$("html,body").animate({scrollTop: 0}, 800);
+				$("html,body").animate({ scrollTop: 0 }, 800);
 			}
 		} else {
-			$("html,body").animate({scrollTop: 0}, 800);
+			$("html,body").animate({ scrollTop: 0 }, 800);
 		}
 		return false;
-	}); 
+	});
 
 
 
@@ -2845,11 +2845,13 @@
 	// =======================================================================================
 
 	function init() {
-	var vidDefer = document.getElementsByTagName("iframe");
-	for (var i=0; i<vidDefer.length; i++) {
-	if(vidDefer[i].getAttribute("data-src")) {
-	vidDefer[i].setAttribute("src",vidDefer[i].getAttribute("data-src"));
-	} } }
+		var vidDefer = document.getElementsByTagName("iframe");
+		for (var i = 0; i < vidDefer.length; i++) {
+			if (vidDefer[i].getAttribute("data-src")) {
+				vidDefer[i].setAttribute("src", vidDefer[i].getAttribute("data-src"));
+			}
+		}
+	}
 	window.onload = init;
 
 
@@ -2864,23 +2866,23 @@
 			.attr("placeholder", "");
 	}).blur(function () {
 		$(this).attr("placeholder", $(this).data("placeholder"));
-	}); 
+	});
 
 	// Form "Browse File" button info
-	$(document).on("change", ":file", function() {
+	$(document).on("change", ":file", function () {
 		var input = $(this),
-		numFiles = input.get(0).files ? input.get(0).files.length : 1,
-		label = input.val().replace(/\\/g, "/").replace(/.*\//, "");
+			numFiles = input.get(0).files ? input.get(0).files.length : 1,
+			label = input.val().replace(/\\/g, "/").replace(/.*\//, "");
 		input.trigger("fileselect", [numFiles, label]);
 	});
-	$(":file").on("fileselect", function(event, numFiles, label) {
+	$(":file").on("fileselect", function (event, numFiles, label) {
 		var input = $(this).parents(".tt-form-file").find(".tt-file-info"),
-		log = numFiles > 1 ? numFiles + " files selected" : label;
+			log = numFiles > 1 ? numFiles + " files selected" : label;
 
-		if( input.length ) {
+		if (input.length) {
 			input.val(log);
 		} else {
-			if( log ) alert(log);
+			if (log) alert(log);
 		}
 	});
 
@@ -2890,17 +2892,17 @@
 	// ========================================
 
 	// E-mail Ajax Send
-	$("#tt-contact-form").submit(function() { // Change (your contact form ID)
+	$("#tt-contact-form").submit(function () { // Change (your contact form ID)
 		var th = $(this);
 		$.ajax({
 			type: "POST",
 			url: "mail.php", // Change (mail.php path)
 			data: th.serialize()
-		}).done(function() {
+		}).done(function () {
 			alert("Thank you. Your message has been sent!");
-			setTimeout(function() {
-			// Done Functions
-			th.trigger("reset");
+			setTimeout(function () {
+				// Done Functions
+				th.trigger("reset");
 			}, 800);
 		});
 		return false;
@@ -2918,19 +2920,19 @@
 
 	// Hide magic cursor on button hover
 	if ($("body").hasClass("tt-smooth-scroll")) {
-		$(".tt-style-switch").on("mouseenter", function() {
+		$(".tt-style-switch").on("mouseenter", function () {
 			gsap.to($ball, { duration: 0.3, scale: 0, opacity: 0 });
-		}).on("mouseleave", function() {
+		}).on("mouseleave", function () {
 			gsap.to($ball, { duration: 0.3, scale: 1, opacity: $ballOpacity });
 		});
 	}
 
 	// Click on style switch
-	$(".tt-style-switch").on("click", function() {
+	$(".tt-style-switch").on("click", function () {
 		$("body").toggleClass("tt-light-style-on");
-		$("body").hasClass("tt-light-style-on") ? (localStorage.setItem("lightstyle", "true"), 
-		$(".tt-style-switch").addClass("is-dark")) : (localStorage.setItem("lightstyle", "false"), 
-		$(".tt-style-switch").removeClass("is-dark"));
+		$("body").hasClass("tt-light-style-on") ? (localStorage.setItem("lightstyle", "true"),
+			$(".tt-style-switch").addClass("is-dark")) : (localStorage.setItem("lightstyle", "false"),
+				$(".tt-style-switch").removeClass("is-dark"));
 
 		location.reload();
 	});
@@ -2939,7 +2941,7 @@
 	var d = localStorage.getItem("lightstyle");
 	d == "true" ? ($("body").addClass("tt-light-style-on"),
 		$(".tt-style-switch").addClass("is-dark")) : ($("body").removeClass("tt-light-style-on"),
-		$(".tt-style-switch").removeClass("is-dark"));
+			$(".tt-style-switch").removeClass("is-dark"));
 
 	// Toggle light stylesheet
 	if ($("body").hasClass("tt-light-style-on")) {
@@ -2956,23 +2958,23 @@
 
 	// tt-Button disabled (prevent click)
 	// ===================
-	$(".tt-btn-disabled").on("click", function() {
+	$(".tt-btn-disabled").on("click", function () {
 		return false;
 	});
-	
+
 
 	// Force page scroll position to top on refresh (do not remove!)
 	// =============================================
-	$(window).on("pagehide", function(){
+	$(window).on("pagehide", function () {
 		$(window).scrollTop(0);
 	});
 
 
 	// Hover fix for iOS
 	// ==================
-	$("*").on("touchstart",function() {
+	$("*").on("touchstart", function () {
 		$(this).trigger("hover");
-	}).on("touchend",function() {
+	}).on("touchend", function () {
 		$(this).trigger("hover");
 	});
 
