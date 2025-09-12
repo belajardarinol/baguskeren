@@ -2,7 +2,7 @@
 * Documentation JS
 * 
 * Author:      Themetorium
-* URL:         http://themetorium.net
+* URL:         http://ruangliterasikaliurang.id
 *
 ================================================================= */
 
