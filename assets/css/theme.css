@@ -3,7 +3,7 @@
 * 
 * Template:		Nui - Creative Portfolio Showcase HTML Website Template
 * Author:		Themetorium
-* URL:			https://themetorium.net/
+* URL: https: //ruangliterasikaliurang.id/
 *
 * Body Font (global): 'Poppins', sans-serif;
 * Secondary Font: 'Syne', sans-serif;
@@ -79,7 +79,7 @@
 /* ------------------------------------------------------------- */
 
 :root {
-	--tt-main-bg-color: #115c8a;
+	--tt-main-bg-color: #071133;
 	/* Change the template background color here. */
 	--tt-main-color: #b12c0d;
 	/* Change the template main color here. */
@@ -10444,5 +10444,29 @@ body:not(.is-mobile) .tt-style-switch:hover {
 		right: auto;
 		left: 0;
 		border-radius: 0 50px 50px 0;
+	}
+}
+/* Custom overrides - Equalize image sizes in specific creative grid */
+/* Applies only to the portfolio grid on the homepage where the grid
+   uses classes: ttgr-layout-creative-2 ttgr-gap-4. This makes all
+   items the same width and height so thumbnails look uniform. */
+@media (min-width: 768px) {
+	#portfolio-grid .tt-grid.ttgr-layout-creative-2.ttgr-gap-4 .tt-grid-item {
+		width: 50% !important;
+		/* two equal columns */
+		padding-top: 0 !important;
+		/* remove creative offset */
+	}
+
+	/* Set a consistent aspect ratio for all items in this grid */
+	#portfolio-grid .tt-grid.ttgr-layout-creative-2.ttgr-gap-4 .ttgr-height {
+		padding-bottom: 65% !important;
+		/* uniform height; adjust as desired */
+	}
+
+	/* Reset special last-child rule from creative layout */
+	#portfolio-grid .tt-grid.ttgr-layout-creative-2.ttgr-gap-4 .tt-grid-item:last-child:nth-child(odd) {
+		width: 50% !important;
+		padding: 0 !important;
 	}
 }
