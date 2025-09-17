@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Dashboard - Blog</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            },
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .container-scroll { scrollbar-width: thin; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <aside class="hidden md:flex w-64 flex-col bg-white border-r border-slate-200">
+      <div class="h-16 flex items-center px-6 border-b border-slate-200">
+        <span class="text-lg font-semibold text-slate-800">TailAdmin</span>
+      </div>
+      <nav class="flex-1 p-4 space-y-2">
+        <a href="./index.html" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary-50 text-primary-700 font-medium">
+          <span>Posts</span>
+        </a>
+        <a href="./users.html" class="flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-slate-50">
+          <span>Users</span>
+        </a>
+      </nav>
+      <div class="p-4 text-xs text-slate-500">© Blog Admin</div>
+    </aside>
+
+    <!-- Main -->
+    <div class="flex-1 flex flex-col min-w-0">
+      <!-- Top bar -->
+      <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 md:px-6">
+        <div class="flex items-center gap-3">
+          <button id="btnOpenSidebar" class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M3 5h14a1 1 0 100-2H3a1 1 0 100 2zm14 4H3a1 1 0 100 2h14a1 1 0 100-2zm0 6H3a1 1 0 100 2h14a1 1 0 100-2z" clip-rule="evenodd" /></svg>
+          </button>
+          <h1 class="text-lg md:text-xl font-semibold">Posts</h1>
+        </div>
+        <div class="flex items-center gap-3">
+          <button id="btnLogout" class="hidden md:inline-flex px-3 py-2 rounded-lg border border-slate-300">Logout</button>
+          <button id="btnNew" class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-3 md:px-4 py-2 rounded-lg text-sm font-medium">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 010 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" /></svg>
+            New Post
+          </button>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <main class="p-4 md:p-6 overflow-auto container-scroll">
+        <div class="bg-white border border-slate-200 rounded-xl shadow-sm">
+          <div class="p-4 md:p-6">
+            <div class="overflow-x-auto">
+              <table class="min-w-full text-sm">
+                <thead>
+                  <tr class="text-left text-slate-500">
+                    <th class="py-2 pr-4">Title</th>
+                    <th class="py-2 pr-4">Slug</th>
+                    <th class="py-2 pr-4">Tags</th>
+                    <th class="py-2 pr-4">Created</th>
+                    <th class="py-2 pr-4">Updated</th>
+                    <th class="py-2 pr-4">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="postsTBody" class="divide-y divide-slate-100"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 z-50 hidden">
+    <div class="absolute inset-0 bg-slate-900/50"></div>
+    <div class="relative mx-auto my-10 max-w-2xl bg-white rounded-xl shadow-xl border border-slate-200">
+      <div class="flex items-center justify-between px-4 md:px-6 py-3 border-b border-slate-200">
+        <h3 id="modalTitle" class="text-lg font-semibold">New Post</h3>
+        <button id="btnCloseModal" class="p-2 rounded-lg hover:bg-slate-100">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 8.586l4.95-4.95a1 1 0 111.415 1.415L11.414 10l4.95 4.95a1 1 0 11-1.415 1.415L10 11.414l-4.95 4.95a1 1 0 11-1.415-1.415L8.586 10l-4.95-4.95A1 1 0 115.05 3.636L10 8.586z" clip-rule="evenodd"/></svg>
+        </button>
+      </div>
+      <form id="postForm" class="px-4 md:px-6 py-5 space-y-4">
+        <input type="hidden" id="postId" />
+        <div>
+          <label class="block text-sm font-medium text-slate-600 mb-1">Title</label>
+          <input id="title" type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500" required />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-600 mb-1">Slug (optional)</label>
+          <input id="slug" type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-600 mb-1">Content</label>
+          <textarea id="content" rows="6" class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500" required></textarea>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-slate-600 mb-1">Tags (comma separated)</label>
+          <input id="tags" type="text" class="w-full border border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500" />
+        </div>
+        <div class="flex items-center justify-end gap-2 py-3 border-t border-slate-200">
+          <button type="button" id="btnCancel" class="px-4 py-2 rounded-lg border border-slate-300">Cancel</button>
+          <button type="submit" class="px-4 py-2 rounded-lg bg-primary-600 text-white font-medium">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="./auth.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>
